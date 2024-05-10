@@ -6,8 +6,8 @@
 
 <style  scoped>
 .app {
-  min-width: 99vw;
-  min-height: 97vh;
+  min-width: 100vw;
+  min-height: 100vh;
   overflow: hidden;
 }
 </style>

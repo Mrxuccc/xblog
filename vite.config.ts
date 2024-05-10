@@ -38,7 +38,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           //define global scss variable
           scss: {
               javascriptEnabled: true,//开启sass
-              additionalData: '@import "@/styles/sass/variables.scss";'
+              additionalData: '@import "@/styles/scss/variables.scss";'
           }
       }
     },
