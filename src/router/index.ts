@@ -1,14 +1,24 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-// import App from "@/pages/Login.vue"
-// import Register from "@/pages/Register.vue"
+import Login from "@/views/Login/Login.vue"
+import home from "@/views/homePage/index.vue"
+import index from "@/views/index/index.vue"
 // import { useStore } from "@/stroe";
 // import { getUserRoutes } from "@/api/user";
 
 const routes: Array<RouteRecordRaw> = [
-    // {
-    //     path: '/App',
-    //     component: App
-    // }
+    {
+        path:'/index',
+        component:index,
+        children:[
+        ]
+    },
+    {
+        path: '/Login',
+        component: Login
+    },{
+        path:'/home',
+        component:home
+    }
 ]
 const router = createRouter({
     routes,
