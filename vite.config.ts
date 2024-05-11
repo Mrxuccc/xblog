@@ -39,6 +39,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           scss: {
               javascriptEnabled: true,//开启sass
               additionalData: '@import "@/styles/scss/variables.scss";'
+          },
+          less:{
+              javascriptEnabled: true,//开启less
+              additionalData: '@import "@/styles/less/variables.less";'
           }
       }
     },

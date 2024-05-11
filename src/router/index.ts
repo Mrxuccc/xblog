@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Login from "@/views/Login/Login.vue"
+import login from "@/views/Login/Login.vue"
 import home from "@/views/homePage/index.vue"
 import index from "@/views/index/index.vue"
 // import { useStore } from "@/stroe";
@@ -7,15 +7,15 @@ import index from "@/views/index/index.vue"
 
 const routes: Array<RouteRecordRaw> = [
     {
-        path:'/index',
+        name:'首页',
+        path:'/',
         component:index,
-        children:[
-        ]
     },
     {
         path: '/Login',
-        component: Login
-    },{
+        component: login
+    },
+    {
         path:'/home',
         component:home
     }

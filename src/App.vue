@@ -1,13 +1,33 @@
 <template>
   <div class="app">
-    <router-view />
+    <header class="header">
+      <div>
+        home
+      </div>
+    </header>
+    <router-view ></router-view>
+    <footer class="footer"></footer>
   </div>
 </template>
 
-<style  scoped>
+<style lang="less"  scoped>
 .app {
-  min-width: 100vw;
+  position: relative;
   min-height: 100vh;
+  max-width: 2560px;
+  margin: 0 auto;
   overflow: hidden;
+}
+.header {
+  position: absolute;
+  top: 0;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  max-width: 2560px;
+  width: 100%;
+  height: 64px;
 }
 </style>
