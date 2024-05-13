@@ -7,7 +7,6 @@
 </template>
 <script setup lang="ts">
 import headerBar from "@/components/pageHead/index.vue";
-
 </script>
 <style lang="less"  scoped>
 .app {
@@ -16,5 +15,10 @@ import headerBar from "@/components/pageHead/index.vue";
   max-width: 2560px;
   margin: 0 auto;
   overflow: hidden;
+  .footer {
+    width: 100%;
+    height: 25vh;
+    background-color: greenyellow;
+  }
 }
 </style>

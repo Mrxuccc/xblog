@@ -2,8 +2,20 @@
   <!-- 首页 -->
   <div class="indexPage">
     <div class="indexPage-showPane">
+      <div class="indexPage-showPane-SHOWICON">
+        LONELY SHARK
+      </div>
     </div>
     <div class="indexPage-content">
+      <div class="indexPage-content-boxs">
+
+      </div>
+      <div class="indexPage-content-boxs">
+
+      </div>
+      <div class="indexPage-content-boxs">
+
+      </div>
       <div class="indexPage-content-boxs">
 
       </div>
@@ -15,7 +27,6 @@
 
 </script>
 <style lang="scss" scoped>
-
 .indexPage {
   width: 100%;
   height: auto;
@@ -25,7 +36,7 @@
   justify-content: flex-start;
   &-showPane {
     width: 100%;
-    height: 100vh;
+    height: $showPane-height;
     // background: url('@/assets/image/background/background.jfif') center/cover;
     background: url('@/assets/image/background/seaBack.jpg') center/cover;
     background-attachment: fixed;
@@ -46,16 +57,30 @@
     //   filter: blur(1rem);
     //   transform: scale(1.15);
     // }
+    &-SHOWICON {
+      width: 500px;
+      height: 93px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 50%;
+      bottom: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      line-height: 93px;
+      font-size: 68px;
+      color: #fff;
+    }
   }
   &-content {
-    width: calc(1980px + 2* var(--layout-padding));
-    height: 100vh;
-    margin: 0 auto;
-    padding: 0 var(--layout-padding);
+    width: 100%;
+    background-color: $bg-color;
     &-boxs {
-      width: 75vw;
-      height: 50vh;
-      background-color: #dbcbcb;
+      margin: 0 auto;
+      width: 75%;
+      height: 55vh;
+      margin-bottom: 1vh;
+      background-color: $boxBg-Color;
     }
   }
   
