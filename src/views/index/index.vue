@@ -7,26 +7,52 @@
       </div>
     </div>
     <div class="indexPage-content">
+      <!-- 模块层 -->
       <div class="indexPage-content-boxs">
-
-      </div>
-      <div class="indexPage-content-boxs">
-
-      </div>
-      <div class="indexPage-content-boxs">
-
-      </div>
-      <div class="indexPage-content-boxs">
-
+        <div class="indexPage-content-boxs-imgType1">
+          <a-image
+            :width="`100%`"
+            :height="`100%`"
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <!-- <el-image style="width:100%; height: 100%" :src="getImageUrl(pageimgList[0].img)" fit="cover"  /> -->
+        </div>
+        <div class="indexPage-content-boxs-textType1">
+          <h1>111</h1>
+          <h1>111</h1>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {ref} from 'vue'
+const getImageUrl = (name:any) => {
+    console.log( new URL(`${name}`, import.meta.url))
+    return new URL(`${name}`, import.meta.url).href
+}
+interface SetImageValue {
+  text:string,
+  img:String
+}
+let pageimgList = ref<SetImageValue[]>([
+  {
+    text:'测试标题1',
+    img:'../../../src/assets/image/Material/page1.jpg'
+  },
+  {
+    text:'测试标题2',
+    img:'@/src/assets/image/Material/page1.jpg'
+  }
+])
 
 </script>
 <style lang="scss" scoped>
+::deep(.ant-image-img) {
+  color:red;
+    object-fit: cover;
+}
 .indexPage {
   width: 100%;
   height: auto;
@@ -75,12 +101,19 @@
   &-content {
     width: 100%;
     background-color: $bg-color;
+    margin-bottom: 1vh;
     &-boxs {
-      margin: 0 auto;
       width: 75%;
       height: 55vh;
       margin-bottom: 1vh;
+      margin: 0 auto;
+      display: flex;
       background-color: $boxBg-Color;
+      &-imgType1 {
+        width: 50%;
+        height: 100%;
+        
+      }
     }
   }
   

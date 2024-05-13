@@ -89,7 +89,7 @@ onBeforeUnmount(()=>{
 } 
 .head-up-2th-scorll {
   background-color: #fff ;
-  box-shadow: .5px 1px 6px rgba(128, 128, 128,.1);
+  box-shadow: .5px 1px 6px rgba(128, 128, 128,.5);
   &>div {
     color:#000 !important;
   }
