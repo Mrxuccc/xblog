@@ -5,6 +5,22 @@ $bg-color:#fff;
 $headText-Color: #fff; //#4195a7;
 $boxBg-Color: #ddd;
 
+$--linkHoverColor:orange;
+
+//logo
 .LOGOICON {
     font-size: 2rem;
+}
+
+// 页面跳转链接
+a {
+  cursor: pointer;
+  text-decoration: none !important;
+}
+a:visited {
+  color: #595a5a !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: $--linkHoverColor !important;
 }

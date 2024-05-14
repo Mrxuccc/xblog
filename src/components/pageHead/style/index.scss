@@ -1,0 +1,79 @@
+#headerBar,.headerBar {
+    position: fixed;
+    top: 10px;
+    left:50%;
+    right:50%;
+    transform:translate(-50%,0);
+    max-width: calc( 2560px - 2%);
+    min-height:21px;
+    width: 98%;
+    height: 42px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1002;
+    border-radius: 9px;
+    &>div {
+      cursor: pointer;
+      margin: 0 8px;
+      color: $headText-Color;
+    }
+    &-button {
+      height: 42px;
+      // padding:0 8px;
+      line-height: 42px;
+      border-bottom: 5px solid transparent;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;/*靠最左边开始*/
+        border-bottom: 5px solid $--linkHoverColor;/*设置底部边颜色*/
+        width: 0;/*宽度为0，这里的宽度是相对与li的宽度*/
+        height: 100%;/*设置高度使它和li等高*/
+        transition: 0.2s all linear;/*设置过度时间*/
+        transition-delay: 0.1s;/*过度延时*/
+      }
+      &:hover {
+        color: $--linkHoverColor !important;
+        &::before {
+          width: 100%;
+          transition: 0.2s all linear;/*设置过度时间*/
+          transition-delay: 0.1s;/*过度延时*/
+        }
+      }
+    }
+    &>.LOGOICON {
+      margin-right: auto;
+    }
+  }
+  
+  // 头部菜单栏
+  .head-up-1th-scorll {
+    background-color: rgb(0, 0, 0,.0);
+    text-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+  } 
+  .head-up-1th-scorll:hover {
+    background-color: rgb(0, 0, 0,.5);
+  } 
+  .head-up-2th-scorll {
+    background-color: #fff ;
+    box-shadow: .5px 1px 6px rgba(128, 128, 128,.5);
+    &>div {
+      color:#000 !important;
+    }
+  } 
+  //头部菜单栏-动效显示隐藏
+  .head-slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+  }
+  .head-slide-fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .head-slide-fade-enter-from,
+  .head-slide-fade-leave-to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
