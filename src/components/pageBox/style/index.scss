@@ -11,6 +11,7 @@
     &:hover {
         box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.8);  
     }
+    
     &-text {
         padding: 2% 3.5%;
         display: flex;
@@ -70,6 +71,7 @@
         width: 50%;
         height: 100%;
         color: #000;
+        align-items: flex-end;
         .pageBoxs-text-tag {
           justify-content: flex-end;
           &-item {
@@ -89,7 +91,7 @@
     &-textType2 {
           width: 50%;
           height: 100%;
-          color: #000;
+          color: #000;    
           align-items: flex-start;
           .pageBoxs-text-tag {
             justify-content: flex-start;

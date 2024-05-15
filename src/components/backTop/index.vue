@@ -1,6 +1,6 @@
 <template>
     <!-- 回到顶部 -->
-    <el-backtop :bottom="bottomInstance" @mouseover='mouseCondition(true)' @mouseout='mouseCondition(false)'>
+    <el-backtop visibility-height="600" :bottom="bottomInstance" @mouseover='mouseCondition(true)' @mouseout='mouseCondition(false)'>
         <i class="iconfont icon-backTop" ></i>
     </el-backtop>
 </template>

@@ -48,110 +48,13 @@
       width: 100%;
       background-color: $bg-color;
       margin-bottom: 1vh;
-      &-boxs {
-        width: 75%;
-        height: 45vh;
+      &-nextPage {
+        color: #000;
+        background-color: grey;
+        width:200px;
+        text-align: center;
         margin: 0 auto;
-        margin-bottom: 2vh;
-        display: flex;
-        align-items: center;
-        border-radius: 8px;
-        box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
-        &:hover {
-          box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.8);  
-        }
-        //公共样式
-        &-text {
-          padding: 2% 3.5%;
-          display: flex;
-          justify-content: space-between;
-          flex-direction: column;
-          &-time {
-            height: 2rem;
-            color: $--timeTextColor;
-          }
-          &-head {
-            height: 2.2rem;
-            margin: 3% 0;
-            color:  $--boxTitleTextColor;
-            font-weight: bold;
-          }
-          &-article {
-            width: 100%;
-            height: 45%;
-            font-size: 15px;
-            line-height: 1.7;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-          }
-          &-tag {
-            width: 100%;
-            height: 18%;
-            display: flex;
-            align-items: flex-end;
-            &-item {
-                padding: 3px 10px;
-                background-color: $tagBg-Color;
-                border-radius: 3px;
-                font-size: 14px;
-                color: $--tagTextColor;
-                transition: all .3s;
-                cursor: pointer;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                &:hover {
-                    color:$text-white;
-                    background-color: $--linkHoverColor;
-                }
-            }
-          }
-        }
-        //奇数
-        &-imgType1 {
-          width: 50%;
-          height: 100%;
-          :deep(.ant-image-img) {
-            border-radius: 8px 0 0 8px;
-            object-fit: cover;
-          }
-        }
-        &-textType1 {
-          width: 50%;
-          height: 100%;
-          color: #000;
-          .indexPage-content-boxs-text-tag {
-            justify-content: flex-end;
-            &-item {
-                margin-left: 1%;
-            }
-          }
-        }
-        //偶数
-        &-imgType2 {
-          width: 50%;
-          height: 100%;
-          :deep(.ant-image-img) {
-            border-radius: 0  8px 8px 0 ;
-            object-fit: cover;
-          }
-        }
-        &-textType2 {
-          width: 50%;
-          height: 100%;
-          color: #000;
-          align-items: flex-start;
-          .indexPage-content-boxs-text-tag {
-            justify-content: flex-start;
-            &-item {
-                margin-right: 1%;
-              } 
-          }
-        }
+        cursor: pointer;
       }
     }
     
