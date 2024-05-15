@@ -8,7 +8,7 @@
     </div>
     <div class="indexPage-content">
       <PageBox :valueList="pageimgList"></PageBox>
-      <div class="indexPage-content-nextPage" @click="addInfoPage">下一页</div>
+      <div id="lineLightBtn" class="indexPage-content-nextPage" @click="addInfoPage"><span>下一页</span></div>
       <!-- <div style="color:#000">~~到底啦~~</div> -->
     </div>
   </div>
@@ -146,6 +146,14 @@ const addInfoPage = ()=>{ //下一页
   }]
   pageimgList.value= pageimgList.value.concat(fakeValueList)
 }
+
+const moveLight =()=>{
+  let btn = document.getElementById('lineLightBtn')
+  console.log(btn?.style.color)
+}
+
+moveLight()
+
 </script>
 <style lang="scss" scoped>
 @import url('./style/index.scss');
