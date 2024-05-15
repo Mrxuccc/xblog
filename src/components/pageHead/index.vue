@@ -26,8 +26,6 @@
   </Transition>
 </template>
 <script lang="ts" setup>
-import { onMounted,onBeforeUnmount,ref } from 'vue'
-
 let isShow = ref<boolean>(true)
 let headCondition = ref<number>(0)
 let directionKeyValue = ref<number>(0)

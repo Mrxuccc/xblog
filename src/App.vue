@@ -1,14 +1,12 @@
 <template>
   <div class="app">
-    <headerBar></headerBar>
+    <PageHead></PageHead>
     <router-view ></router-view>
-    <footerBar></footerBar>
+    <BackTop></BackTop>
+    <PageFooter></PageFooter>
   </div>
 </template>
 <script setup lang="ts">
-import headerBar from "@/components/pageHead/index.vue";
-
-import footerBar from "@/components/pageFooter/index.vue";
 </script>
 <style lang="less"  scoped>
 .app {

@@ -7,14 +7,12 @@
       </div>
     </div>
     <div class="indexPage-content">
-      <pageBox :valueList="pageimgList"></pageBox>
+      <PageBox :valueList="pageimgList"></PageBox>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
-import pageBox from '@/components/pageBox/index.vue'
 import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
 
 let pageimgList = ref<SetBoxImageValue[]>([

@@ -51,7 +51,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import { getImageUrl } from '@/assets/ts/common.ts'
 import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
 
