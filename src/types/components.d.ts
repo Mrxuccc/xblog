@@ -12,6 +12,7 @@ declare module 'vue' {
     PageBox: typeof import('./../components/pageBox/index.vue')['default']
     PageFooter: typeof import('./../components/pageFooter/index.vue')['default']
     PageHead: typeof import('./../components/pageHead/index.vue')['default']
+    PageNoneBox: typeof import('./../components/pageNoneBox/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

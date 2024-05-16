@@ -1,17 +1,26 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1715752125243') format('truetype');
+  font-family: "xfont"; /* Project id 4550545 */
+  src: url('iconfont.eot?t=1715872874876'); /* IE9 */
+  src: url('iconfont.eot?t=1715872874876#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('iconfont.woff2?t=1715872874876') format('woff2'),
+       url('iconfont.woff?t=1715872874876') format('woff'),
+       url('iconfont.ttf?t=1715872874876') format('truetype'),
+       url('iconfont.svg?t=1715872874876#xfont') format('svg');
 }
 
-.iconfont {
-  font-family: "iconfont" !important;
+.xfont {
+  font-family: "xfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-backTop:before {
-  content: "\e708";
+.xblog-backtop1:before {
+  content: "\e60a";
+}
+
+.xblog-aboutme:before {
+  content: "\e63e";
 }
 

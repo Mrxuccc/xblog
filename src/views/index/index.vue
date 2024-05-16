@@ -6,11 +6,25 @@
         LONELY SHARK
       </div>
     </div>
+    <!-- 内容 -->
     <div class="indexPage-content">
-      <PageBox :valueList="pageimgList"></PageBox>
-      <LigntButton v-if="!isNoneValue" @click="addInfoPage"></LigntButton>
-      <div v-else class="indexPage-content-noneValue">~~到底啦~~</div>
+      <div class="indexPage-content-aboutMe" @click="aboutMe">
+        <i class="xfont xblog-aboutme"></i> 
+      </div>
+      <!-- 个人介绍 -->
+      <div v-if="isShowAboutme" class="profile" >
+        <div  class="profile-avatar">
+
+        </div>
+      </div>
+      <!-- infoBox -->
+      <div class="indexPage-content-boxList" :class = "{closeedProfile: isShowAboutme}">
+        <PageBox :valueList="pageimgList"></PageBox>
+      </div>
     </div>
+    <!-- 翻页器 -->
+    <LigntButton v-if="!isNoneValue" @click="addInfoPage"></LigntButton>
+    <PageNoneBox v-else></PageNoneBox>
   </div>
 </template>
 
@@ -146,7 +160,10 @@ const addInfoPage = ()=>{ //下一页
   }]
   pageimgList.value= pageimgList.value.concat(fakeValueList)
 }
-
+let isShowAboutme = ref<boolean>(false) //查看关于我
+const aboutMe = ()=>{
+  isShowAboutme.value = !isShowAboutme.value
+}
 </script>
 <style lang="scss" scoped>
 @import url('./style/index.scss');

@@ -1,7 +1,7 @@
 <template>
     <!-- 回到顶部 -->
     <el-backtop :visibility-height="trarkNumber" :bottom="bottomInstance" @mouseover='mouseCondition(true)' @mouseout='mouseCondition(false)'>
-        <i class="iconfont icon-backTop" ></i>
+        <i class="xfont xblog-backtop1" ></i>
     </el-backtop>
 </template>
 <script lang="ts" setup>
@@ -11,7 +11,7 @@ const mouseCondition=(key:boolean)=>{
     bottomInstance.value = key?110:100
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .el-backtop {
     height:auto;
     width: auto;
@@ -20,9 +20,9 @@ const mouseCondition=(key:boolean)=>{
     box-shadow: none;
     font-size: 20px;
     transition: all .3s;
-    .iconfont {
+    .xfont {
         font-size: 5rem;
-        color: rgba(73, 177, 245, 1);
+        color: $iconBlue-color;
     }
     &:hover {
         background-color: transparent;
