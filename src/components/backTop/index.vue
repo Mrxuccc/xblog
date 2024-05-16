@@ -1,10 +1,11 @@
 <template>
     <!-- 回到顶部 -->
-    <el-backtop visibility-height="600" :bottom="bottomInstance" @mouseover='mouseCondition(true)' @mouseout='mouseCondition(false)'>
+    <el-backtop :visibility-height="trarkNumber" :bottom="bottomInstance" @mouseover='mouseCondition(true)' @mouseout='mouseCondition(false)'>
         <i class="iconfont icon-backTop" ></i>
     </el-backtop>
 </template>
 <script lang="ts" setup>
+const trarkNumber = ref<number>(600)
 let bottomInstance = ref<number>(100)
 const mouseCondition=(key:boolean)=>{
     bottomInstance.value = key?110:100

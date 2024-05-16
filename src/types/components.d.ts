@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BackTop: typeof import('./../components/backTop/index.vue')['default']
+    LigntButton: typeof import('./../components/ligntButton/index.vue')['default']
     PageBox: typeof import('./../components/pageBox/index.vue')['default']
     PageFooter: typeof import('./../components/pageFooter/index.vue')['default']
     PageHead: typeof import('./../components/pageHead/index.vue')['default']

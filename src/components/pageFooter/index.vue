@@ -12,7 +12,6 @@
   background-size: 300% 300%;
   border-radius: 1.5rem 1.5rem 0 0;
   -webkit-animation: gradientbg 10s ease infinite;
-  margin-top: 2vh;
   &-poet {
     padding-top: 10px;
     font-size: 16px;

@@ -8,15 +8,15 @@
     </div>
     <div class="indexPage-content">
       <PageBox :valueList="pageimgList"></PageBox>
-      <div id="lineLightBtn" class="indexPage-content-nextPage" @click="addInfoPage"><span>下一页</span></div>
-      <!-- <div style="color:#000">~~到底啦~~</div> -->
+      <LigntButton v-if="!isNoneValue" @click="addInfoPage"></LigntButton>
+      <div v-else class="indexPage-content-noneValue">~~到底啦~~</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
-
+let isNoneValue = ref<boolean>(false)
 let pageimgList = ref<SetBoxImageValue[]>([
   {
     text:'东京街头',
@@ -146,13 +146,6 @@ const addInfoPage = ()=>{ //下一页
   }]
   pageimgList.value= pageimgList.value.concat(fakeValueList)
 }
-
-const moveLight =()=>{
-  let btn = document.getElementById('lineLightBtn')
-  console.log(btn?.style.color)
-}
-
-moveLight()
 
 </script>
 <style lang="scss" scoped>

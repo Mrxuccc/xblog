@@ -1,6 +1,6 @@
 <template>
     <!-- 自定义展示box -->
-    <div  class="pageBoxs" v-for="(item,index) in valueList" :key="index">
+    <div class="pageBoxs" :class="{lastBox:index===valueList.length-1}" v-for="(item,index) in valueList" :key="index">
         <div v-if="index%2==0" class="pageBoxs-imgType1">
           <a-image
             :width="`100%`"
@@ -68,4 +68,7 @@ props
 
 <style lang="scss" scoped>
 @import url(./style/index.scss);
+.lastBox {
+  margin-bottom: 0 !important;
+}
 </style>

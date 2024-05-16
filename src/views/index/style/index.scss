@@ -43,55 +43,21 @@
         font-size: 68px;
         color: #fff;
       }
+      
     }
     &-content {
-      width: 100%;
-      background-color: $bg-color;
-      margin-bottom: 1vh;
-      &-nextPage  {
-        position: relative;
-        width: 140px;
+      &-noneValue {
+        // width: 140px;
         height: 50px;
-        color: #000;
-        background-color: #fff;
         line-height: 50px;
         text-align: center;
-        margin: 0 auto;
-        cursor: pointer;
-        border-radius: 23px;
-        // box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.4);
-        overflow: hidden;
-        &>span {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%);
-          z-index: 1;
-        }
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          transform: translate(-50%,-50%);
-          width: 100px;
-          height: 100px;
-          background: radial-gradient(orange , transparent,transparent);
-          opacity: 0;
-          transition: .5s;
-        }
-        &:hover::before {
-          opacity: 1;
-        }
-        &::after {
-          content: '';
-          background-color: rgba(255, 255, 255,.6);
-          position: absolute;
-          inset: 2px;
-          border-radius: 23px;
+        color: $btnText-Color;
+        &:hover {
+          color: $--linkHoverColor;
         }
       }
     }
+    
     
   }
   
