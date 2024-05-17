@@ -9,13 +9,11 @@
     <!-- 内容 -->
     <div class="indexPage-content">
       <div class="indexPage-content-aboutMe" @click="aboutMe">
-        <i class="xfont xblog-aboutme"></i> 
+        <i :class="{routeY:isShowAboutme}" class="xfont xblog-app_icon_about_me"></i> 
       </div>
       <!-- 个人介绍 -->
       <div v-if="isShowAboutme" class="profile" >
-        <div  class="profile-avatar">
-
-        </div>
+        <el-avatar class="profile-avatar"  fit="cover"  :size="80" :src="getImageUrl(avatarImg)" ></el-avatar>
       </div>
       <!-- infoBox -->
       <div class="indexPage-content-boxList" :class = "{closeedProfile: isShowAboutme}">
@@ -29,8 +27,12 @@
 </template>
 
 <script setup lang="ts">
+import { getImageUrl } from '@/assets/ts/common.ts'
 import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
 let isNoneValue = ref<boolean>(false)
+//测试avatar数据
+const avatarImg = ref<string>('../../assets/image/netTextImg/arvator.jpg')
+
 let pageimgList = ref<SetBoxImageValue[]>([
   {
     text:'东京街头',
@@ -95,6 +97,7 @@ let pageimgList = ref<SetBoxImageValue[]>([
     tagTextList:['SHARK']
   }
 ])
+
 const addInfoPage = ()=>{ //下一页
   let fakeValueList:SetBoxImageValue[] = [{
     text:'东京街头',

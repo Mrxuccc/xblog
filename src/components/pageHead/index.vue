@@ -20,8 +20,9 @@
           后台
         </div>
         <div class="headerBar-button">
-          登录
+          音乐
         </div>
+        <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" ></el-avatar>
     </div>
   </Transition>
 </template>
@@ -29,7 +30,10 @@
 let isShow = ref<boolean>(true)
 let headCondition = ref<number>(0)
 let directionKeyValue = ref<number>(0)
-
+const state = reactive({
+  circleUrl:
+    'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+})
 //头部栏逻辑控制
 const handleScroll = ()=> {
   // 页面滑动的距离
