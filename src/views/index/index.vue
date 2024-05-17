@@ -14,6 +14,9 @@
       <!-- 个人介绍 -->
       <div v-if="isShowAboutme" class="profile" >
         <el-avatar class="profile-avatar"  fit="cover"  :size="80" :src="getImageUrl(avatarImg)" ></el-avatar>
+        <div  class="profile-name">
+          SHARK
+        </div>
       </div>
       <!-- infoBox -->
       <div class="indexPage-content-boxList" :class = "{closeedProfile: isShowAboutme}">
