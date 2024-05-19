@@ -1,11 +1,11 @@
 @font-face {
   font-family: "xfont"; /* Project id 4550545 */
-  src: url('iconfont.eot?t=1715909098309'); /* IE9 */
-  src: url('iconfont.eot?t=1715909098309#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('iconfont.woff2?t=1715909098309') format('woff2'),
-       url('iconfont.woff?t=1715909098309') format('woff'),
-       url('iconfont.ttf?t=1715909098309') format('truetype'),
-       url('iconfont.svg?t=1715909098309#xfont') format('svg');
+  src: url('iconfont.eot?t=1716038066520'); /* IE9 */
+  src: url('iconfont.eot?t=1716038066520#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('iconfont.woff2?t=1716038066520') format('woff2'),
+       url('iconfont.woff?t=1716038066520') format('woff'),
+       url('iconfont.ttf?t=1716038066520') format('truetype'),
+       url('iconfont.svg?t=1716038066520#xfont') format('svg');
 }
 
 .xfont {
@@ -14,6 +14,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.xblog-weixin:before {
+  content: "\e870";
+}
+
+.xblog-github:before {
+  content: "\e691";
 }
 
 .xblog-app_icon_about_me:before {

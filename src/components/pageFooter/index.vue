@@ -25,7 +25,20 @@
     
   }
 }
-  
+
+// 页面跳转链接
+a {
+  cursor: pointer;
+  text-decoration: none !important;
+}
+a:visited {
+  color: #595a5a !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: $--linkHoverColor !important;
+}
+
 @keyframes gradientbg {
   0% {
     background-position: 0 50%;

@@ -8,6 +8,7 @@ import 'ant-design-vue/dist/reset.css';
 import 'element-plus/dist/index.css'
 import './style.css'
 import '@/assets/iconfonts/iconfont.css'
+import '@/assets/iconfonts/iconfont.js'
 
 const app = createApp(App)
 

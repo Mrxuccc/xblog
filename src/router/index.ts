@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import login from "@/views/Login/Login.vue"
 import home from "@/views/homePage/index.vue"
 import index from "@/views/index/index.vue"
+import share from "@/views/share/index.vue"
 // import { useStore } from "@/stroe";
 // import { getUserRoutes } from "@/api/user";
 
@@ -18,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     {
         path:'/home',
         component:home
+    },
+    {
+        name:'分享',
+        path:'/share',
+        component:share
     }
 ]
 const router = createRouter({

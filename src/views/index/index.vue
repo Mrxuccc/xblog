@@ -8,16 +8,37 @@
     </div>
     <!-- 内容 -->
     <div class="indexPage-content">
+      <!-- btn -->
       <div class="indexPage-content-aboutMe" @click="aboutMe">
         <i :class="{routeY:isShowAboutme}" class="xfont xblog-app_icon_about_me"></i> 
       </div>
       <!-- 个人介绍 -->
-      <div v-if="isShowAboutme" class="profile" >
-        <el-avatar class="profile-avatar"  fit="cover"  :size="80" :src="getImageUrl(avatarImg)" ></el-avatar>
-        <div  class="profile-name">
-          SHARK
+      <Transition name="avator-fade">
+        <div v-if="isShowAboutme" class="profile" >
+          <el-avatar class="profile-avatar"  fit="cover"  :size="80" :src="getImageUrl(avatarImg)" ></el-avatar>
+          <div  class="profile-name">
+            SHARK
+          </div>
+          <div class="profile-link">
+            <div>
+              <i class="xfont xblog-github"></i>
+            </div>
+            <div>
+              <SvgIcon iconName="xblog-weixin" className="xfontSvg"></SvgIcon>
+            </div>
+          </div>
+          <div class="profile-valuePanes">
+            <div class="profile-valuePanes-box" v-for="(item,index) in showValue" :key="index">
+              <div class="profile-valuePanes-box-text">
+                {{ item.name }}
+              </div>
+              <div class="profile-valuePanes-box-value">
+                {{ item.value }}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </Transition>
       <!-- infoBox -->
       <div class="indexPage-content-boxList" :class = "{closeedProfile: isShowAboutme}">
         <PageBox :valueList="pageimgList"></PageBox>
@@ -100,6 +121,23 @@ let pageimgList = ref<SetBoxImageValue[]>([
     tagTextList:['SHARK']
   }
 ])
+
+//网站信息
+const showValue = ref([
+  {
+    name:'文章',
+    value:0
+  },
+  {
+    name:'照片',
+    value:0
+  },
+  {
+    name:'访问量',
+    value:0
+  }
+])
+
 
 const addInfoPage = ()=>{ //下一页
   let fakeValueList:SetBoxImageValue[] = [{

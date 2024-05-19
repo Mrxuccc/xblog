@@ -4,23 +4,30 @@
         <div class="LOGOICON" >
           SHARK
         </div>
+        <router-link to="/" >
+          <div class="headerBar-button">
+            首页
+          </div>
+        </router-link>
+        <router-link to="/share">
+          <div class="headerBar-button">
+            记录
+          </div>    
+        </router-link>
         <div class="headerBar-button">
-          首页
+          动态
         </div>
         <div class="headerBar-button">
-          去分享
+          照片
+        </div>
+        <div class="headerBar-button">
+          音乐
         </div>
         <div class="headerBar-button">
           留言
         </div>
         <div class="headerBar-button">
-          联系我
-        </div>
-        <div class="headerBar-button">
           后台
-        </div>
-        <div class="headerBar-button">
-          音乐
         </div>
         <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" ></el-avatar>
     </div>

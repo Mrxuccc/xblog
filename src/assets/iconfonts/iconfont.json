@@ -6,6 +6,20 @@
   "description": "个人博客",
   "glyphs": [
     {
+      "icon_id": "8289024",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e870",
+      "unicode_decimal": 59504
+    },
+    {
+      "icon_id": "1261752",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
       "icon_id": "17894519",
       "name": "app_icon_about_me",
       "font_class": "app_icon_about_me",

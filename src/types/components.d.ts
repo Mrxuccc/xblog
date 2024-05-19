@@ -15,5 +15,6 @@ declare module 'vue' {
     PageNoneBox: typeof import('./../components/pageNoneBox/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SvgIcon: typeof import('./../components/SvgIcon/SvgIcon.vue')['default']
   }
 }
