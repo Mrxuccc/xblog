@@ -1,0 +1,74 @@
+.news {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    &-showPane {
+      width: 100%;
+      height: $showPane-height;
+      // background: url('@/assets/image/background/seaBack.jpg') center/cover;
+      // background-attachment: fixed;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+      margin-bottom: 2vh;
+      overflow: hidden;
+      background: url('@/assets/image/background/background.jfif') center/cover;
+      animation: hue 10s infinite alternate;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: blur(1rem);
+        transform: scale(1.15);
+      }
+      &-SHOWICON {
+        width: 500px;
+        height: 93px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: 50%;
+        bottom: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        line-height: 93px;
+        font-size: 68px;
+        color: #fff;
+      }
+      
+    }
+    &-content {
+      width: 100%;
+      height: auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      &-boxList {
+        width: 75%; //75% open // 60% closed
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transition: width 0.5s;
+      }
+      .closeedProfile {
+        width: 60%;
+      }
+    }
+  }
+  
+  @keyframes hue {
+    from {
+      filter: hue-rotate(0);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+  }

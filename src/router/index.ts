@@ -3,6 +3,8 @@ import login from "@/views/Login/Login.vue"
 import home from "@/views/homePage/index.vue"
 import index from "@/views/index/index.vue"
 import share from "@/views/share/index.vue"
+import news from "@/views/movingNews/index.vue"
+import camera from "@/views/camera/index.vue"
 // import { useStore } from "@/stroe";
 // import { getUserRoutes } from "@/api/user";
 
@@ -11,14 +13,20 @@ const routes: Array<RouteRecordRaw> = [
         name:'首页',
         path:'/',
         component:index,
+    },{
+        name:"动态",
+        path:'/news',
+        component:news,
     },
     {
+        name:'登录',
         path: '/Login',
         component: login
     },
     {
-        path:'/home',
-        component:home
+        name:'照片',
+        path:'/camera',
+        component:camera
     },
     {
         name:'分享',

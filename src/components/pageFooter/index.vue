@@ -32,11 +32,15 @@ a {
   text-decoration: none !important;
 }
 a:visited {
-  color: #595a5a !important;
   text-decoration: none !important;
+  color: #595a5a !important;
 }
 a:hover {
   color: $--linkHoverColor !important;
+}
+a:active {
+    text-decoration: none !important;
+  color: #595a5a !important;
 }
 
 @keyframes gradientbg {

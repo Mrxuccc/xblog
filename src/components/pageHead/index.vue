@@ -14,7 +14,7 @@
             记录
           </div>    
         </router-link>
-        <router-link to="/movingNews">
+        <router-link to="/news">
           <div class="headerBar-button">
             动态
           </div>    
@@ -47,10 +47,7 @@
 let isShow = ref<boolean>(true)
 let headCondition = ref<number>(0)
 let directionKeyValue = ref<number>(0)
-const state = reactive({
-  circleUrl:
-    'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
-})
+const state = reactive({circleUrl:'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',})
 //头部栏逻辑控制
 const handleScroll = ()=> {
   // 页面滑动的距离

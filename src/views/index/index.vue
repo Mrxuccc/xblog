@@ -24,13 +24,14 @@
               <i class="xfont xblog-github"></i>
             </div>
             <el-popover
-              :width="300"
+              :width="200"
               popper-style="box-shadow: rgb(14 18 22 / 35%) 0px 10px 38px -10px, rgb(14 18 22 / 20%) 0px 10px 20px -15px; padding: 20px;"
             >
               <template #reference>
                 <SvgIcon iconName="xblog-weixin" className="xfontSvg"></SvgIcon>
               </template>
               <template #default>
+                <img width="160px" height="160px" :src="getImageUrl(callMe)" alt="" srcset="">
               </template>
             </el-popover>
           </div>
@@ -63,7 +64,7 @@ import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
 let isNoneValue = ref<boolean>(false)
 //测试avatar数据
 const avatarImg = ref<string>('../../assets/image/netTextImg/arvator.jpg')
-
+const callMe = ref<string>('../../assets/image/netTextImg/callMeWechart.jpg')
 let pageimgList = ref<SetBoxImageValue[]>([
   {
     text:'东京街头',

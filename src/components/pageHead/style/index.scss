@@ -34,6 +34,7 @@
       // padding:0 8px;
       line-height: 42px;
       border-bottom: 5px solid transparent;
+      transition: .5s;
       position: relative;
       &::before {
         content: "";
