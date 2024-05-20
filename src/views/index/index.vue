@@ -20,12 +20,19 @@
             SHARK
           </div>
           <div class="profile-link">
-            <div>
+            <div @click="linkTo('github')">
               <i class="xfont xblog-github"></i>
             </div>
-            <div>
-              <SvgIcon iconName="xblog-weixin" className="xfontSvg"></SvgIcon>
-            </div>
+            <el-popover
+              :width="300"
+              popper-style="box-shadow: rgb(14 18 22 / 35%) 0px 10px 38px -10px, rgb(14 18 22 / 20%) 0px 10px 20px -15px; padding: 20px;"
+            >
+              <template #reference>
+                <SvgIcon iconName="xblog-weixin" className="xfontSvg"></SvgIcon>
+              </template>
+              <template #default>
+              </template>
+            </el-popover>
           </div>
           <div class="profile-valuePanes">
             <div class="profile-valuePanes-box" v-for="(item,index) in showValue" :key="index">
@@ -207,6 +214,11 @@ const addInfoPage = ()=>{ //下一页
 let isShowAboutme = ref<boolean>(false) //查看关于我
 const aboutMe = ()=>{
   isShowAboutme.value = !isShowAboutme.value
+}
+const linkTo =(tag:string)=>{
+  if(tag=='github') {
+    window.open('https://github.com/Mrxuccc',"_blank")
+  }
 }
 </script>
 <style lang="scss" scoped>

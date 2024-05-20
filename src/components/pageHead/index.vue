@@ -14,21 +14,31 @@
             记录
           </div>    
         </router-link>
-        <div class="headerBar-button">
-          动态
-        </div>
-        <div class="headerBar-button">
-          照片
-        </div>
-        <div class="headerBar-button">
-          音乐
-        </div>
-        <div class="headerBar-button">
-          留言
-        </div>
-        <div class="headerBar-button">
-          后台
-        </div>
+        <router-link to="/movingNews">
+          <div class="headerBar-button">
+            动态
+          </div>    
+        </router-link>
+        <router-link to="/camera">
+          <div class="headerBar-button">
+            照片
+          </div>    
+        </router-link>
+        <router-link to="/music">
+          <div class="headerBar-button">
+            音乐
+          </div>    
+        </router-link>
+        <router-link to="/leaveMessage">
+          <div class="headerBar-button">
+            留言
+          </div>    
+        </router-link>
+        <router-link to="/setting">
+          <div class="headerBar-button">
+            后台
+          </div>    
+        </router-link>
         <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" ></el-avatar>
     </div>
   </Transition>
