@@ -1,10 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import login from "@/views/Login/Login.vue"
-import home from "@/views/homePage/index.vue"
+import music from "@/views/music/index.vue"
 import index from "@/views/index/index.vue"
 import share from "@/views/share/index.vue"
 import news from "@/views/movingNews/index.vue"
 import camera from "@/views/camera/index.vue"
+import client from "@/views/client/index.vue"
+import guestbook from "@/views/guestbook/index.vue"
+import article from "@/views/article/index.vue"
 // import { useStore } from "@/stroe";
 // import { getUserRoutes } from "@/api/user";
 
@@ -32,6 +35,27 @@ const routes: Array<RouteRecordRaw> = [
         name:'分享',
         path:'/share',
         component:share
+    },
+    {
+        name:'音乐',
+        path: '/music',
+        component: music
+    },
+    {
+        name:'留言',
+        path:'/guestbook',
+        component:guestbook
+    },
+    {
+        name:'后台',
+        path:'/client',
+        component:client
+    }
+    ,
+    {
+        path:'/article',
+        component:article
+
     }
 ]
 const router = createRouter({

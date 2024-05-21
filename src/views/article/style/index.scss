@@ -1,4 +1,4 @@
-.news {
+.article {
     width: 100%;
     height: auto;
     display: flex;
@@ -11,12 +11,9 @@
       position: relative;
       display: flex;
       justify-content: center;
-      &-boxList {
-        width: 75%; //75% open // 60% closed
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        transition: width 0.5s;
+      &-page {
+        width: 80%; 
+        height: 100vh;
       }
     }
   }

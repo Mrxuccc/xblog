@@ -30,6 +30,7 @@
 a {
   cursor: pointer;
   text-decoration: none !important;
+  color: #595a5a !important;
 }
 a:visited {
   text-decoration: none !important;

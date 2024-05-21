@@ -29,7 +29,7 @@
             音乐
           </div>    
         </router-link>
-        <router-link to="/leaveMessage">
+        <router-link to="/guestbook">
           <div class="headerBar-button">
             留言
           </div>    

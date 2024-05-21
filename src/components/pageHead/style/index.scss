@@ -65,6 +65,9 @@
   .head-up-1th-scorll {
     background-color: rgb(0, 0, 0,.0);
     text-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+    &>div {
+      color:#fff !important;
+    }
     a:visited {
       color: #fff !important;
       text-decoration: none !important;
@@ -77,6 +80,9 @@
     background-color: #fff ;
     box-shadow: .5px 1px 6px rgba(128, 128, 128,.5);
     &>div {
+      color:#000 !important;
+    }
+    a {
       color:#000 !important;
     }
     a:visited {

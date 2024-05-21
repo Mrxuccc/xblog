@@ -1,10 +1,8 @@
 <template>
     <div class="share">
-        <div class="share-showPane">
-          <!-- <div class="share-showPane-SHOWICON">
-            LONELY SHARK
-          </div> -->
-        </div>
+      <KeepAlive>
+        <HeadImageBox></HeadImageBox>
+      </KeepAlive>
     </div>
 </template>
 

@@ -3,5 +3,6 @@ export interface SetBoxImageValue {
   img:String,
   tag:'img'|'video', //图片img,视频video
   info:String,
-  tagTextList:string[]
+  tagTextList:string[],
+  date:string|Date
 }
