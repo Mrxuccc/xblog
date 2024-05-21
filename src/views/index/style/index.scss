@@ -78,6 +78,7 @@
         border-radius: 8px;
         background-color: $boxBg-white;
         box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
+        transition:box-shadow 0.5s;
         &:hover {
             box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.8);  
         }

@@ -1,11 +1,12 @@
 .pageBoxs {
     width: 100%;
-    height: 45vh;
+    // height: 45vh;
+    height: 27rem;
     margin-bottom:3%;
     display: flex;
     align-items: center;
     border-radius: 8px;
-    transition: all .5;
+    transition: all .5s;
     overflow: hidden;
     box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
     &:hover {

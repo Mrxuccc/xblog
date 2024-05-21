@@ -1,16 +1,16 @@
 <template>
   <!-- 照片墙 -->
-    <div class="news">
-      <div class="news-showPane">
-        <div class="news-showPane-SHOWICON">
+    <div class="camera">
+      <div class="camera-showPane">
+        <div class="camera-showPane-SHOWICON">
           LONELY SHARK
         </div>
       </div>
       <!-- 内容 -->
-      <div class="news-content">
+      <div class="camera-content">
         <!-- infoBox -->
-        <div class="news-content-boxList" :class = "{closeedProfile: isShowAboutme}">
-          <PageBox :valueList="pageimgList"></PageBox>
+        <div class="camera-content-boxList" >
+          <CameraBox :valueList="pageimgList"></CameraBox>
         </div>
       </div>
       <!-- 翻页器 -->
@@ -151,7 +151,6 @@
     }]
     pageimgList.value= pageimgList.value.concat(fakeValueList)
   }
-  let isShowAboutme = ref<boolean>(false) //查看关于我
   </script>
   <style lang="scss" scoped>
   @import url('./style/index.scss');

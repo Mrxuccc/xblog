@@ -1,0 +1,25 @@
+.cameraBoxs {
+  width: 95%;
+  height: 27rem;
+  margin-bottom: 3%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.5s;
+  overflow: hidden;
+  box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
+  // width: 45%;
+  // // height: 45vh;
+  // height: 27rem;
+  // margin-bottom:3%;
+  // display: flex;
+  // align-items: center;
+  // border-radius: 8px;
+  // transition: all .5;
+  // overflow: hidden;
+  // box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
+  &:hover {
+      box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.8);  
+  }
+    
+}

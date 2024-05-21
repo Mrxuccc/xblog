@@ -1,4 +1,4 @@
-.news {
+.camera {
     width: 100%;
     height: auto;
     display: flex;
@@ -53,13 +53,9 @@
       justify-content: center;
       &-boxList {
         width: 75%; //75% open // 60% closed
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
         transition: width 0.5s;
-      }
-      .closeedProfile {
-        width: 60%;
       }
     }
   }
