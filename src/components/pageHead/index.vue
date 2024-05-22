@@ -1,49 +1,28 @@
 <template>
+  <!-- 页面头部菜单栏 -->
   <Transition name="head-slide-fade" >
     <div v-if="isShow" class="headerBar" id="headerBar" :class="{'head-up-1th-scorll':headCondition==0,'head-up-2th-scorll':headCondition==1}">
         <div class="LOGOICON" >
           SHARK
         </div>
-        <router-link to="/" >
-          <div class="headerBar-button">
-            首页
-          </div>
-        </router-link>
-        <router-link to="/share">
-          <div class="headerBar-button">
-            记录
-          </div>    
-        </router-link>
-        <router-link to="/news">
-          <div class="headerBar-button">
-            动态
-          </div>    
-        </router-link>
-        <router-link to="/camera">
-          <div class="headerBar-button">
-            照片
-          </div>    
-        </router-link>
-        <router-link to="/music">
-          <div class="headerBar-button">
-            音乐
-          </div>    
-        </router-link>
-        <router-link to="/guestbook">
-          <div class="headerBar-button">
-            留言
-          </div>    
-        </router-link>
-        <router-link to="/setting">
-          <div class="headerBar-button">
-            后台
-          </div>    
-        </router-link>
+        <!-- 一级菜单 -->
+        <template v-for="(item,index) in routerList" :key="index">
+          <router-link :to="item.path"   v-if="!item.meta.hidden"  >
+            <div class="headerBar-button">
+              {{ item.name }}
+            </div>
+          </router-link>
+        </template>
         <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" ></el-avatar>
     </div>
   </Transition>
 </template>
 <script lang="ts" setup>
+import { useRouter } from 'vue-router';
+const router = useRouter()
+
+const routerList =ref(router.getRoutes())
+
 let isShow = ref<boolean>(true)
 let headCondition = ref<number>(0)
 let directionKeyValue = ref<number>(0)

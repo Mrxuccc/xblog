@@ -8,7 +8,6 @@
     border-radius: 8px;
     transition: all .5s;
     overflow: hidden;
-    cursor: pointer;
     box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
     &:hover {
         box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.8);  
@@ -63,15 +62,7 @@
     &-imgType1 {
         width: 50%;
         height: 100%;
-        position: relative;
-        .xfont {
-          position: absolute;
-          top: 50%;
-          left: 50%; 
-          font-size: 6rem;
-          transform: translate(-50%,-50%);
-        }
-        img {
+        :deep(.ant-image-img) {
           border-radius: 8px 0 0 8px;
           object-fit: cover;
         }
@@ -92,16 +83,8 @@
     &-imgType2 {
         width: 50%;
         height: 100%;
-        position: relative;
-        .xfont {
-          position: absolute;
-          top: 50%;
-          left: 50%; 
-          font-size: 6rem;
-          transform: translate(-50%,-50%);
-        }
-        img {
-          border-radius: 8px 0 0 8px;
+        :deep(.ant-image-img) {
+          border-radius: 0  8px 8px 0 ;
           object-fit: cover;
         }
     }

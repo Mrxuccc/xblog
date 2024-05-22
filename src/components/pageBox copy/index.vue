@@ -2,11 +2,10 @@
     <!-- 自定义展示box -->
     <div class="pageBoxs" :class="{lastBox:index===valueList.length-1}" v-for="(item,index) in valueList" @click="toArticlePage(item)" :key="index">
         <div v-if="index%2==0" class="pageBoxs-imgType1">
-          <SvgIcon iconName="xblog-edit_icon_vedio" v-if="item.tag ==='video'" className="xfont"></SvgIcon>
-          <img
-            width="100%"
-            height="100%"
-            :src="item.img?getImageUrl(item.img):''"
+          <a-image
+            :width="`100%`"
+            :height="`100%`"
+            :src="item.img?getImageUrl(item.img):null"
           />
         </div>
         <div v-if="index%2==0" class="pageBoxs-text pageBoxs-textType1"  @click="toArticlePage(item)">
@@ -34,11 +33,10 @@
           </div>
         </div>
         <div v-if="index%2==1" class="pageBoxs-imgType2">
-          <SvgIcon iconName="xblog-edit_icon_vedio" v-if="item.tag ==='video'" className="xfont"></SvgIcon>
-          <img
-            width="100%"
-            height="100%"
-            :src="item.img?getImageUrl(item.img):''"
+          <a-image
+            :width="`100%`"
+            :height="`100%`"
+            :src="getImageUrl(item.img)"
           />
         </div>
     </div>
@@ -69,11 +67,11 @@ const props = withDefaults(
 )
 props
 
-const toArticlePage=(e:SetBoxImageValue)=> {
-  let {id,text} = e
+const toArticlePage=(e:object)=> {
+  console.log(e)
   router.push({
     path:'/article',
-    query:{id:id,title:text}
+    params:{...e}
   })
 }
 

@@ -26,6 +26,7 @@ const props = withDefaults(
     {
         valueList:()=>[
             {
+                id:'',
                 text:'',
                 img:'',
                 tag:'img',

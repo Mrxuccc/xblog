@@ -22,6 +22,7 @@
   let isNoneValue = ref<boolean>(false)
   let pageimgList = ref<SetBoxImageValue[]>([
     {
+      id:'1231',
       text:'东京街头',
       img:'../../../src/assets/image/Material/page1.jpg',
       tag:'img',
@@ -35,7 +36,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'落日风车田',
+      id:'1231',
+    text:'落日风车田',
       img:'../../../src/assets/image/Material/page2.jpg',
       tag:'img',
       info:`
@@ -48,7 +50,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题3',
+      id:'1231',
+    text:'测试标题3',
       img:'../../../src/assets/image/Material/page3.jpg',
       tag:'img',
       info:`测试标题`,
@@ -56,7 +59,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题4',
+      id:'1231',
+    text:'测试标题4',
       img:'../../../src/assets/image/Material/page4.jpg',
       tag:'img',
       info:`
@@ -69,7 +73,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题5',
+      id:'1231',
+    text:'测试标题5',
       img:'../../../src/assets/image/Material/page5.jpg',
       tag:'img',
       info:`
@@ -82,7 +87,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题6',
+      id:'1231',
+    text:'测试标题6',
       img:'../../../src/assets/image/Material/page6.jpg',
       tag:'img',
       info:`测试文章`,
@@ -92,7 +98,8 @@
   ])
   const addInfoPage = ()=>{ //下一页
     let fakeValueList:SetBoxImageValue[] = [{
-      text:'东京街头',
+      id:'1231',
+    text:'东京街头',
       img:'../../../src/assets/image/Material/page1.jpg',
       tag:'img',
       info:`
@@ -105,7 +112,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'落日风车田',
+      id:'1231',
+    text:'落日风车田',
       img:'../../../src/assets/image/Material/page2.jpg',
       tag:'img',
       info:`
@@ -118,7 +126,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题3',
+      id:'1231',
+    text:'测试标题3',
       img:'../../../src/assets/image/Material/page3.jpg',
       tag:'img',
       info:`测试标题`,
@@ -126,7 +135,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题4',
+      id:'1231',
+    text:'测试标题4',
       img:'../../../src/assets/image/Material/page4.jpg',
       tag:'img',
       info:`
@@ -139,7 +149,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题5',
+      id:'1231',
+    text:'测试标题5',
       img:'../../../src/assets/image/Material/page5.jpg',
       tag:'img',
       info:`
@@ -152,7 +163,8 @@
     date:'2024-05-14 12:34:12'
     },
     {
-      text:'测试标题6',
+      id:'1231',
+    text:'测试标题6',
       img:'../../../src/assets/image/Material/page6.jpg',
       tag:'img',
       info:`测试文章`,

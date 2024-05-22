@@ -9,9 +9,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     BackTop: typeof import('./../components/backTop/index.vue')['default']
     CameraBox: typeof import('./../components/cameraBox/index.vue')['default']
+    copy: typeof import('./../components/pageBox copy/index.vue')['default']
     HeadImageBox: typeof import('./../components/headImageBox/index.vue')['default']
     LigntButton: typeof import('./../components/ligntButton/index.vue')['default']
     PageBox: typeof import('./../components/pageBox/index.vue')['default']
+    'PageBox copy': typeof import('./../components/pageBox copy/index.vue')['default']
     PageFooter: typeof import('./../components/pageFooter/index.vue')['default']
     PageHead: typeof import('./../components/pageHead/index.vue')['default']
     PageNoneBox: typeof import('./../components/pageNoneBox/index.vue')['default']

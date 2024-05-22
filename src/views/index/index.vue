@@ -67,6 +67,7 @@ const avatarImg = ref<string>('../../assets/image/netTextImg/arvator.jpg')
 const callMe = ref<string>('../../assets/image/netTextImg/callMeWechart.jpg')
 let pageimgList = ref<SetBoxImageValue[]>([
   {
+    id:'1231',
     text:'东京街头',
     img:'../../../src/assets/image/Material/page1.jpg',
     tag:'img',
@@ -80,9 +81,10 @@ let pageimgList = ref<SetBoxImageValue[]>([
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'落日风车田',
     img:'../../../src/assets/image/Material/page2.jpg',
-    tag:'img',
+    tag:'video',
     info:`
             1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
             2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
@@ -93,6 +95,7 @@ let pageimgList = ref<SetBoxImageValue[]>([
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题3',
     img:'../../../src/assets/image/Material/page3.jpg',
     tag:'img',
@@ -101,6 +104,7 @@ let pageimgList = ref<SetBoxImageValue[]>([
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题4',
     img:'../../../src/assets/image/Material/page4.jpg',
     tag:'img',
@@ -114,6 +118,7 @@ let pageimgList = ref<SetBoxImageValue[]>([
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题5',
     img:'../../../src/assets/image/Material/page5.jpg',
     tag:'img',
@@ -127,6 +132,7 @@ let pageimgList = ref<SetBoxImageValue[]>([
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题6',
     img:'../../../src/assets/image/Material/page6.jpg',
     tag:'img',
@@ -155,6 +161,7 @@ const showValue = ref([
 
 const addInfoPage = ()=>{ //下一页
   let fakeValueList:SetBoxImageValue[] = [{
+    id:'1231',
     text:'东京街头',
     img:'../../../src/assets/image/Material/page1.jpg',
     tag:'img',
@@ -168,6 +175,7 @@ const addInfoPage = ()=>{ //下一页
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'落日风车田',
     img:'../../../src/assets/image/Material/page2.jpg',
     tag:'img',
@@ -181,6 +189,7 @@ const addInfoPage = ()=>{ //下一页
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题3',
     img:'../../../src/assets/image/Material/page3.jpg',
     tag:'img',
@@ -189,6 +198,7 @@ const addInfoPage = ()=>{ //下一页
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题4',
     img:'../../../src/assets/image/Material/page4.jpg',
     tag:'img',
@@ -202,6 +212,7 @@ const addInfoPage = ()=>{ //下一页
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题5',
     img:'../../../src/assets/image/Material/page5.jpg',
     tag:'img',
@@ -215,6 +226,7 @@ const addInfoPage = ()=>{ //下一页
     date:'2024-05-14 12:34:12'
   },
   {
+    id:'1231',
     text:'测试标题6',
     img:'../../../src/assets/image/Material/page6.jpg',
     tag:'img',

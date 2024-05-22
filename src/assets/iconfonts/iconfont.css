@@ -1,11 +1,11 @@
 @font-face {
   font-family: "xfont"; /* Project id 4550545 */
-  src: url('iconfont.eot?t=1716038066520'); /* IE9 */
-  src: url('iconfont.eot?t=1716038066520#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('iconfont.woff2?t=1716038066520') format('woff2'),
-       url('iconfont.woff?t=1716038066520') format('woff'),
-       url('iconfont.ttf?t=1716038066520') format('truetype'),
-       url('iconfont.svg?t=1716038066520#xfont') format('svg');
+  src: url('iconfont.eot?t=1716383712397'); /* IE9 */
+  src: url('iconfont.eot?t=1716383712397#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('iconfont.woff2?t=1716383712397') format('woff2'),
+       url('iconfont.woff?t=1716383712397') format('woff'),
+       url('iconfont.ttf?t=1716383712397') format('truetype'),
+       url('iconfont.svg?t=1716383712397#xfont') format('svg');
 }
 
 .xfont {
@@ -14,6 +14,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.xblog-edit_icon_vedio:before {
+  content: "\e621";
 }
 
 .xblog-weixin:before {

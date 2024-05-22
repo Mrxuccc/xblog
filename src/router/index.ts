@@ -16,46 +16,72 @@ const routes: Array<RouteRecordRaw> = [
         name:'首页',
         path:'/',
         component:index,
+        meta:{
+            hidden:false
+        }
     },{
         name:"动态",
         path:'/news',
         component:news,
-    },
-    {
-        name:'登录',
-        path: '/Login',
-        component: login
-    },
-    {
-        name:'照片',
-        path:'/camera',
-        component:camera
+        meta:{
+            hidden:false
+        }
     },
     {
         name:'分享',
         path:'/share',
-        component:share
+        component:share,
+        meta:{
+            hidden:false
+        }
+    },
+    {
+        name:'登录',
+        path: '/Login',
+        component: login,
+        meta:{
+            hidden:true
+        }
+    },
+    {
+        name:'照片',
+        path:'/camera',
+        component:camera,
+        meta:{
+            hidden:false
+        }
     },
     {
         name:'音乐',
         path: '/music',
-        component: music
+        component: music,
+        meta:{
+            hidden:false
+        }
     },
     {
         name:'留言',
         path:'/guestbook',
-        component:guestbook
+        component:guestbook,
+        meta:{
+            hidden:false
+        }
     },
     {
         name:'后台',
         path:'/client',
-        component:client
+        component:client,
+        meta:{
+            hidden:false
+        }
     }
     ,
     {
         path:'/article',
-        component:article
-
+        component:article,
+        meta:{
+            hidden:true
+        }
     }
 ]
 const router = createRouter({
