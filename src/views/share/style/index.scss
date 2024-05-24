@@ -1,0 +1,31 @@
+.share {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    &-content {
+      width: 100%;
+      min-height: 32vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      &-boxList {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 55%;
+        min-height: 44.6vh;
+        margin-top: -6%;
+        margin-bottom: 5%;
+        padding: 2rem 1.5%;
+        border-radius: 16px;
+        transition: width 0.5s;
+        background-color: $boxBg-white;
+        box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
+        
+      }
+    }
+  }

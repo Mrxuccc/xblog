@@ -1,0 +1,20 @@
+.music {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    &-content {
+      width: 100%;
+      height: auto;
+      position: relative;
+      &-boxList {
+        width: 75%; //75% open // 60% closed
+        min-height: 32vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }

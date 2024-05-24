@@ -7,3 +7,13 @@ export interface SetBoxImageValue {
   tagTextList:string[],
   date:string|Date
 }
+
+export interface setShareInfoType {
+  id:string|number,
+  userName:string,
+  releaseTime:string|Date,
+  info:string,
+  avatarImg:string,
+  showImg:[string],
+  commentNumber:number|string
+}

@@ -35,3 +35,10 @@ $--boxTitleTextColor:#000;
 //   color: $--linkHoverColor !important;
 // }
 
+//ant 图片展示 修改
+:deep(.ant-image) {
+    cursor: pointer;
+  }
+:deep(.ant-image-mask) {
+  display: none !important;
+}

@@ -65,9 +65,7 @@ let getBGImgLinkUrl = (e:string)=>{
 
 watch(() => 
     router.currentRoute.value.path,
-    (oldVal,newVal) => {
-      //要执行的方法
-      console.log(oldVal,newVal)
+    () => {
       randomBackground()
 },{immediate: true,deep: true})
 
