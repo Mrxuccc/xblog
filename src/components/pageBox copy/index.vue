@@ -68,7 +68,6 @@ const props = withDefaults(
 props
 
 const toArticlePage=(e:object)=> {
-  console.log(e)
   router.push({
     path:'/article',
     params:{...e}

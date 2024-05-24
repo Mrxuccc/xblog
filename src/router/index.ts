@@ -89,7 +89,12 @@ const router = createRouter({
     // 路由模式
     history: createWebHistory()
 })
-
+// 页面跳转后到达顶部
+router.afterEach(async (to,from,next) => {
+    window.scrollTo(0,0);
+    // 或
+    // window.scroll(0, 0);
+});
 // 全局导航守卫 
 // router.beforeEach(async (to, _from, next) => {
 //     /* 路由发生变化修改页面title */

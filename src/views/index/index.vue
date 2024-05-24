@@ -13,41 +13,39 @@
         <i :class="{routeY:isShowAboutme}" class="xfont xblog-app_icon_about_me"></i> 
       </div>
       <!-- 个人介绍 -->
-      <Transition name="avator-fade">
-        <div v-if="isShowAboutme" class="profile" >
-          <el-avatar class="profile-avatar"  fit="cover"  :size="80" :src="getImageUrl(avatarImg)" ></el-avatar>
-          <div  class="profile-name">
-            SHARK
+      <div v-if="isShowAboutme" class="profile" >
+        <el-avatar class="profile-avatar"  fit="cover"  :size="80" :src="getImageUrl(avatarImg)" ></el-avatar>
+        <div  class="profile-name">
+          SHARK
+        </div>
+        <div class="profile-link">
+          <div @click="linkTo('github')">
+            <i class="xfont xblog-github"></i>
           </div>
-          <div class="profile-link">
-            <div @click="linkTo('github')">
-              <i class="xfont xblog-github"></i>
+          <el-popover
+            :width="200"
+            popper-style="box-shadow: rgb(14 18 22 / 35%) 0px 10px 38px -10px, rgb(14 18 22 / 20%) 0px 10px 20px -15px; padding: 20px;"
+          >
+            <template #reference>
+              <SvgIcon iconName="xblog-weixin" className="xfontSvg"></SvgIcon>
+            </template>
+            <template #default>
+              <img width="160px" height="160px" :src="getImageUrl(callMe)" alt="" srcset="">
+            </template>
+          </el-popover>
+        </div>
+        <div class="profile-valuePanes">
+          <div class="profile-valuePanes-box" v-for="(item,index) in showValue" :key="index">
+            <div class="profile-valuePanes-box-text">
+              {{ item.name }}
             </div>
-            <el-popover
-              :width="200"
-              popper-style="box-shadow: rgb(14 18 22 / 35%) 0px 10px 38px -10px, rgb(14 18 22 / 20%) 0px 10px 20px -15px; padding: 20px;"
-            >
-              <template #reference>
-                <SvgIcon iconName="xblog-weixin" className="xfontSvg"></SvgIcon>
-              </template>
-              <template #default>
-                <img width="160px" height="160px" :src="getImageUrl(callMe)" alt="" srcset="">
-              </template>
-            </el-popover>
-          </div>
-          <div class="profile-valuePanes">
-            <div class="profile-valuePanes-box" v-for="(item,index) in showValue" :key="index">
-              <div class="profile-valuePanes-box-text">
-                {{ item.name }}
-              </div>
-              <div class="profile-valuePanes-box-value">
-                {{ item.value }}
-              </div>
+            <div class="profile-valuePanes-box-value">
+              {{ item.value }}
             </div>
           </div>
         </div>
-      </Transition>
-      <!-- infoBox -->
+      </div>
+      <!-- 内容模块 -->
       <div class="indexPage-content-boxList" :class = "{closeedProfile: isShowAboutme}">
         <PageBox :valueList="pageimgList"></PageBox>
       </div>

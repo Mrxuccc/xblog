@@ -7,12 +7,13 @@
         </div>
         <!-- 一级菜单 -->
         <template v-for="(item,index) in routerList" :key="index">
-          <router-link :to="item.path"   v-if="!item.meta.hidden"  >
+          <router-link :to="item.path" v-if="!item.meta.hidden"  >
             <div class="headerBar-button">
               {{ item.name }}
             </div>
           </router-link>
         </template>
+        <!-- 用户头像，用户登录，退出登录 -->
         <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" ></el-avatar>
     </div>
   </Transition>

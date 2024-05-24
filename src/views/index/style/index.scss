@@ -128,14 +128,15 @@
         }
       }
       &-boxList {
-        width: 75%; //75% open // 60% closed
+        width: 70%; //75% open // 60% closed
         display: flex;
         align-items: center;
         flex-direction: column;
         transition: width 0.5s;
       }
       .closeedProfile {
-        width: 60%;
+        width: 55%;
+        transition: all 0.5s;
       }
     }
   }
@@ -147,18 +148,4 @@
     to {
       filter: hue-rotate(360deg);
     }
-  }
-
-  .avator-fade-enter-active {
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .avator-fade-leave-active {
-    transition: all 0.01s ease-in-out;
-  }
-  
-  .avator-fade-enter-from,
-  .avator-fade-leave-to {
-    transform: translateX(20%);
-    opacity: 0;
   }
