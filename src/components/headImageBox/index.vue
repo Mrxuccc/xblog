@@ -56,6 +56,10 @@ let randomBackground = ()=>{
         '@/assets/image/Material/page4.jpg',
         '@/assets/image/Material/page5.jpg',
         '@/assets/image/Material/page6.jpg',
+        '@/assets/image/Material/page7.jpg',
+        '@/assets/image/Material/page8.jpg',
+        '@/assets/image/Material/page9.jpg',
+        '@/assets/image/Material/page10.jpg',
     ]
     normalImage.value = 'url(' +  getBGImgLinkUrl(images[Math.floor(Math.random()*images.length)]) + ')'
 }

@@ -6,6 +6,20 @@
   "description": "个人博客",
   "glyphs": [
     {
+      "icon_id": "17412224",
+      "name": "Emoji Add",
+      "font_class": "EmojiAdd",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "35505249",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
       "icon_id": "3106386",
       "name": "chat",
       "font_class": "chat",

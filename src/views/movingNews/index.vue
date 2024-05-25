@@ -18,7 +18,7 @@
   </template>
   
   <script setup lang="ts">
-  import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
+  import type {SetBoxImageValue} from '@/common/ts/commonInterface.ts'
   let isNoneValue = ref<boolean>(false)
   let pageimgList = ref<SetBoxImageValue[]>([
     {

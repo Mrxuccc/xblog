@@ -1,11 +1,11 @@
 @font-face {
   font-family: "xfont"; /* Project id 4550545 */
-  src: url('iconfont.eot?t=1716536100151'); /* IE9 */
-  src: url('iconfont.eot?t=1716536100151#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('iconfont.woff2?t=1716536100151') format('woff2'),
-       url('iconfont.woff?t=1716536100151') format('woff'),
-       url('iconfont.ttf?t=1716536100151') format('truetype'),
-       url('iconfont.svg?t=1716536100151#xfont') format('svg');
+  src: url('iconfont.eot?t=1716562915728'); /* IE9 */
+  src: url('iconfont.eot?t=1716562915728#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('iconfont.woff2?t=1716562915728') format('woff2'),
+       url('iconfont.woff?t=1716562915728') format('woff'),
+       url('iconfont.ttf?t=1716562915728') format('truetype'),
+       url('iconfont.svg?t=1716562915728#xfont') format('svg');
 }
 
 .xfont {
@@ -14,6 +14,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.xblog-EmojiAdd:before {
+  content: "\e671";
+}
+
+.xblog-tupian:before {
+  content: "\e67e";
 }
 
 .xblog-chat:before {

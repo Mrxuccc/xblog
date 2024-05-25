@@ -15,5 +15,18 @@ export interface setShareInfoType {
   info:string,
   avatarImg:string,
   showImg:[string],
-  commentNumber:number|string
+  commentNumber:number|string,
+
+}
+
+export type setCommentType = {
+  id:string|number,
+  userName:string,
+  releaseTime:string|Date,
+  comment:string,
+  avatarImg:string,
+  showImg?:string|null|undefined,
+  to?:string|null|undefined,
+
+
 }

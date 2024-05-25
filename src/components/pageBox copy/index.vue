@@ -45,8 +45,8 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 const router = useRouter()
-import { getImageUrl } from '@/assets/ts/common.ts'
-import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
+import { getImageUrl } from '@/common/ts/common.ts'
+import type {SetBoxImageValue} from '@/common/ts/commonInterface.ts'
 const props = withDefaults(
     defineProps<{
         valueList:SetBoxImageValue[]

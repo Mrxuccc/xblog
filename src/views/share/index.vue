@@ -5,19 +5,22 @@
       </KeepAlive>
       <div class="share-content" >
         <div class="share-content-boxList">
-          <shareBox :valueList="showInfoList"></shareBox>
+          <shareBox :valueList="showInfoList" :commentList="commentList" @subMitComment="subMitComment" @toReplys="toReplys"></shareBox>
           <!-- 翻页器 -->
           <LigntButton v-if="!isNoneValue" @click="addInfoPage"></LigntButton>
           <PageNoneBox v-else></PageNoneBox>
         </div>
       </div>
+      <ReplySubmitDielog :dialogFormVisible="dialogFormVisible" @replyVisible="replyVisible"></ReplySubmitDielog>
     </div>
 </template>
 
 <script lang="ts" setup>
 import shareBox from './component/shareBox/index.vue'
-import type {setShareInfoType} from '@/assets/ts/commonInterface.ts'
+import ReplySubmitDielog from './component/replySubmitDielog/index.vue'
+import type {setShareInfoType,setCommentType} from '@/common/ts/commonInterface.ts'
 let isNoneValue = ref<boolean>(false)
+//分享列表
 let showInfoList = ref<setShareInfoType[]>([
   {
     id:'12345',
@@ -50,6 +53,24 @@ let showInfoList = ref<setShareInfoType[]>([
     avatarImg:'../../assets/image/netTextImg/arvator.jpg',
     showImg:['../../assets/image/Material/page8.jpg'],
     commentNumber:0
+  }
+])
+//评论列表
+let commentList = ref<setCommentType[]>([
+  {
+    id:'12323',
+    userName:'shark',
+    releaseTime:'2024-5-25 12:15:40',
+    comment:'我来评论啦！！！',
+    avatarImg:'../../assets/image/netTextImg/arvator.jpg',
+  },
+  {
+    id:'12323',
+    userName:'shark',
+    releaseTime:'2024-5-25 12:15:40',
+    to:'shark',
+    comment:'我来评论啦！！！',
+    avatarImg:'../../assets/image/netTextImg/arvator.jpg',
   }
 ])
 const addInfoPage=()=>{
@@ -91,6 +112,21 @@ const addInfoPage=()=>{
   list.map(_=>{
     showInfoList.value.push(_)
   })
+}
+//评论提交
+const subMitComment =(id:string|number,userName:string,text:string)=>{
+  console.log(id,userName,text)
+}
+//回复评论--未完成
+const dialogFormVisible = ref<boolean>(false)
+const toReplys=(id:string|number,userName:string)=>{
+  console.log(id,userName)
+  dialogFormVisible.value = true
+}
+const replyVisible = (visible:boolean)=>{
+  if(!visible) {
+    dialogFormVisible.value = visible
+  }
 }
 </script>
 

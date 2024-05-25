@@ -62,8 +62,8 @@
 </template>
 
 <script setup lang="ts">
-import { getImageUrl } from '@/assets/ts/common.ts'
-import type {SetBoxImageValue} from '@/assets/ts/commonInterface.ts'
+import { getImageUrl } from '@/common/ts/common.ts'
+import type {SetBoxImageValue} from '@/common/ts/commonInterface.ts'
 let isNoneValue = ref<boolean>(false)
 //测试avatar数据
 const avatarImg = ref<string>('../../assets/image/netTextImg/arvator.jpg')
