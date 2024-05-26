@@ -1,5 +1,5 @@
 <template>
-    <el-dialog v-model="visible" title="留言" width="400" center>
+    <el-dialog class="replyDielog" v-model="visible" title="留言" width="400" center>
         <template #footer>
         </template>
     </el-dialog>
