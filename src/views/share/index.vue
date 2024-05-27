@@ -11,13 +11,13 @@
           <PageNoneBox v-else></PageNoneBox>
         </div>
       </div>
-      <ReplySubmitDielog :dialogFormVisible="dialogFormVisible" @replyVisible="replyVisible"></ReplySubmitDielog>
+      <!-- 评论弹窗 -->
+      <ReplySubmitDielog :dialogFormVisible="dialogFormVisible" @replyVisible="replyVisible" @submitReply="submitReply"></ReplySubmitDielog>
     </div>
 </template>
 
 <script lang="ts" setup>
 import shareBox from './component/shareBox/index.vue'
-import ReplySubmitDielog from './component/replySubmitDielog/index.vue'
 import type {setShareInfoType,setCommentType} from '@/common/ts/commonInterface.ts'
 let isNoneValue = ref<boolean>(false)
 //分享列表
@@ -58,23 +58,29 @@ let showInfoList = ref<setShareInfoType[]>([
 //评论列表
 let commentList = ref<setCommentType[]>([
   {
-    id:'12323',
-    userName:'shark',
+    id:'12320',
+    userName:'shark-1',
     releaseTime:'2024-5-25 12:15:40',
     comment:'我来评论啦！！！',
     avatarImg:'../../assets/image/netTextImg/arvator.jpg',
   },
   {
-    id:'12323',
-    userName:'shark',
+    id:'12322',
+    userName:'shark-2',
     releaseTime:'2024-5-25 12:15:40',
     to:'shark',
     comment:'我来评论啦！！！',
     avatarImg:'../../assets/image/netTextImg/arvator.jpg',
+  },
+  {
+    id:'12321',
+    userName:'shark-3',
+    releaseTime:'2024-5-25 12:15:40',
+    comment:'我来评论啦---！！！',
+    avatarImg:'../../assets/image/netTextImg/arvator.jpg',
   }
 ])
 const addInfoPage=()=>{
-  console.log('1232123')
   let list:setShareInfoType[] = [
     {
       id:'12345',
@@ -117,16 +123,22 @@ const addInfoPage=()=>{
 const subMitComment =(id:string|number,userName:string,text:string)=>{
   console.log(id,userName,text)
 }
-//回复评论--未完成
+
+//回复评论
+let toUserNames = ref<string>('')
+let toIds = ref<string|number>('')
 const dialogFormVisible = ref<boolean>(false)
-const toReplys=(id:string|number,userName:string)=>{
-  console.log(id,userName)
+const toReplys=(toId:string|number,toUserName:string)=>{
+  toUserNames.value = toUserName
+  toIds.value = toId
   dialogFormVisible.value = true
 }
 const replyVisible = (visible:boolean)=>{
-  if(!visible) {
-    dialogFormVisible.value = visible
-  }
+  if(!visible) dialogFormVisible.value = visible
+}
+//回复评论 提交 
+const submitReply = (text:string)=>{
+  console.log(text,toUserNames.value,toIds.value)
 }
 </script>
 

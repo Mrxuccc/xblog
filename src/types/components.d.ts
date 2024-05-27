@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     BackTop: typeof import('./../components/backTop/index.vue')['default']
     CameraBox: typeof import('./../components/cameraBox/index.vue')['default']
+    CommentBox: typeof import('./../components/commentBox/index.vue')['default']
     copy: typeof import('./../components/pageBox copy/index.vue')['default']
     DispersionGradient: typeof import('./../components/dispersionGradient/index.vue')['default']
     HeadImageBox: typeof import('./../components/headImageBox/index.vue')['default']
@@ -18,6 +19,7 @@ declare module 'vue' {
     PageFooter: typeof import('./../components/pageFooter/index.vue')['default']
     PageHead: typeof import('./../components/pageHead/index.vue')['default']
     PageNoneBox: typeof import('./../components/pageNoneBox/index.vue')['default']
+    ReplySubmitDielog: typeof import('./../components/replySubmitDielog/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./../components/SvgIcon/SvgIcon.vue')['default']

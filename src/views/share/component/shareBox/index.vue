@@ -63,7 +63,6 @@
 <script lang="ts" setup>
 import { getImageUrl } from '@/common/ts/common.ts'
 import type {setShareInfoType,setCommentType} from '@/common/ts/commonInterface.ts'
-import CommentBox from '../commentBox/index.vue'
 let openCommentIndex = ref<number>(-1) 
 const props = withDefaults(
     defineProps<{
