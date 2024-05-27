@@ -14,7 +14,10 @@
           </router-link>
         </template>
         <!-- 用户头像，用户登录，退出登录 -->
-        <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" ></el-avatar>
+        <Router-Link to="/Login">
+          <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" >
+          </el-avatar>
+        </Router-Link>
     </div>
   </Transition>
 </template>

@@ -27,7 +27,10 @@
       color: $headText-Color;
     }
     &-avatar {
-      margin: 0 8px;
+      margin: 0 8px;    
+      margin-top: 50%;
+      transform: translateY(-32%);
+      cursor: pointer;
     }
     &-button {
       height: 42px;
