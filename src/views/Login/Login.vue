@@ -4,9 +4,9 @@
     <div class="welcome">
       <div class="pinkbox"  :style="{transform:`translateX(${pinkboxX}%)`}" >
         <!-- 注册 -->
-        <div class="signup nodisplay">
+        <div class="signup " :class="{nodisplay:titleKey=='sign in'}">
           <h1>Register</h1>
-          <form autocomplete="off">
+          <form  class="more-padding" autocomplete="off">
             <input type="text" placeholder="Username">
             <input type="email" placeholder="Email">
             <input type="password" placeholder="Password">
@@ -16,8 +16,8 @@
         </div>
 
         <!-- 登录 -->
-        <div class="signin">
-          <h1>{{ title }}</h1>
+        <div class="signin"  :class="{nodisplay:titleKey=='login'}" >
+          <h1>login</h1>
           <form class="more-padding" autocomplete="off">
             <input type="text" placeholder="Username">
             <input type="password" placeholder="Password">
@@ -33,35 +33,35 @@
         <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
         <p class="desc">Pick your perfect <span>bouquet</span></p>
         <img class="flower smaller" src="https://hbimg.huabanimg.com/c09305167a883e60179a45374df73252304001359acca-W3qbYm_fw658/format/webp" />
-        <p class="account">Have an account?</p>
-        <button class="button" id="signin" @click="clickLogin">Login</button>
+        <p class="account">您已有账户?</p>
+        <button class="button" id="signin" @click="clickLogin">登录</button>
       </div>
 
       <div class="rightbox">
         <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
         <p class="desc">Pick your perfect <span>bouquet</span></p>
         <img class="flower" src="https://hbimg.huabanimg.com/b28be92c8198975a74ad656eba00b352c9b9e589819af-lDXUAS_fw658/format/webp" />
-        <p class="account">Don't have an account?</p>
-        <button class="button" id="signup" @click="clickSignUp()">Sign Up</button>
+        <p class="account">您还没有账户?</p>
+        <button class="button" id="signup" @click="clickSignUp()">注册</button>
       </div>
     </div>
   </div>   
 </template>
 
 <script setup lang="ts">
-const title =ref<string>('login')
+const titleKey =ref<string>('login')
 
 let pinkboxX = ref<string|number>(0)
 const clickSignUp = ()=>{
   pinkboxX.value = 80
   setTimeout(()=>{
-    title.value = 'sign in'
+    titleKey.value = 'sign in'
   },600)
 }
 const clickLogin = ()=>{
   pinkboxX.value = 0
   setTimeout(()=>{
-    title.value = 'login'
+    titleKey.value = 'login'
   },600)
 }
 

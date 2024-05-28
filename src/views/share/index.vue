@@ -7,7 +7,7 @@
         <div class="share-content-boxList">
           <shareBox :valueList="showInfoList" :commentList="commentList" @subMitComment="subMitComment" @toReplys="toReplys"></shareBox>
           <!-- 翻页器 -->
-          <LigntButton v-if="!isNoneValue" @click="addInfoPage"></LigntButton>
+          <LigntButton v-if="!isNoneValue" @click="nextPage"></LigntButton>
           <PageNoneBox v-else></PageNoneBox>
         </div>
       </div>
@@ -80,7 +80,8 @@ let commentList = ref<setCommentType[]>([
     avatarImg:'../../assets/image/netTextImg/arvator.jpg',
   }
 ])
-const addInfoPage=()=>{
+//下一页
+const nextPage=()=>{
   let list:setShareInfoType[] = [
     {
       id:'12345',
@@ -119,7 +120,7 @@ const addInfoPage=()=>{
     showInfoList.value.push(_)
   })
 }
-//评论提交
+//分享评论-提交
 const subMitComment =(id:string|number,userName:string,text:string)=>{
   console.log(id,userName,text)
 }
