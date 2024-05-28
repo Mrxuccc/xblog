@@ -3,9 +3,12 @@
         <KeepAlive>
           <HeadImageBox tag="article" :title="pageValueList.title" :info="pageValueList.id"></HeadImageBox>
         </KeepAlive>
-        <!-- 文章具体内容 -->
+        <!-- 文章内容 -->
         <div class="article-content">
+            <!-- 文章具体内容 -->
             <div v-html="pageArticle" class="article-content-page"></div>
+            <div  class="article-content-update" ><span>文章最后更新于&nbsp;</span><span>{{ update }}</span></div>
+            <!-- 评论区 -->
             <div class="article-content-bottom">
               <div  class="article-content-bottom-commentBox">
                 <div  class="article-content-bottom-commentBox-head">
@@ -65,6 +68,7 @@ const pageArticle = ref<string>(
     直升机上的另一个人阿勒·哈希姆接听了电话。他表示，自己掉到了山上，感觉非常不舒服，
     并且不知道自己位置在哪里，也不知道其他人在什么地方。</p>`
 )
+let update = ref<Date|string>('2024-05-28 18:37')
 onBeforeMount(()=>{
     pageValueList.value.id = router.query.id
     pageValueList.value.title = router.query.title

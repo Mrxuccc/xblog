@@ -3,30 +3,31 @@
   <div class="container">
     <div class="welcome">
       <div class="pinkbox"  :style="{transform:`translateX(${pinkboxX}%)`}" >
+        <!-- 登录 -->
+        <div class="signin"  :class="{nodisplay:titleKey=='signin'}" >
+          <h1>登录</h1>
+          <form class="more-padding" autocomplete="off">
+            <input type="text" placeholder="用户名">
+            <input type="password" placeholder="密码">
+            <div class="checkbox">
+              <input type="checkbox" id="remember" /><label for="remember">记住密码</label>
+            </div>
+            <button class="buttom sumbit">登录</button>
+          </form>
+        </div>
         <!-- 注册 -->
-        <div class="signup " :class="{nodisplay:titleKey=='sign in'}">
-          <h1>Register</h1>
+        <div class="signup " :class="{nodisplay:titleKey=='signup'}">
+          <h1>注册</h1>
           <form  class="more-padding" autocomplete="off">
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm Password">
-            <button class="button submit">Create Account</button>
+            <input type="text" placeholder="用户名">
+            <input type="email" placeholder="邮箱">
+            <input type="password" placeholder="密码">
+            <input type="password" placeholder="确认密码">
+            <button class="button submit">创建账户</button>
           </form>
         </div>
 
-        <!-- 登录 -->
-        <div class="signin"  :class="{nodisplay:titleKey=='login'}" >
-          <h1>login</h1>
-          <form class="more-padding" autocomplete="off">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <div class="checkbox">
-              <input type="checkbox" id="remember" /><label for="remember">Remember Me</label>
-            </div>
-            <button class="buttom sumbit">Login</button>
-          </form>
-        </div>
+        
       </div>
 
       <div class="leftbox">
@@ -49,19 +50,19 @@
 </template>
 
 <script setup lang="ts">
-const titleKey =ref<string>('login')
+const titleKey =ref<string>('signup')
 
 let pinkboxX = ref<string|number>(0)
 const clickSignUp = ()=>{
   pinkboxX.value = 80
   setTimeout(()=>{
-    titleKey.value = 'sign in'
+    titleKey.value = 'signin'
   },600)
 }
 const clickLogin = ()=>{
   pinkboxX.value = 0
   setTimeout(()=>{
-    titleKey.value = 'login'
+    titleKey.value = 'signup'
   },600)
 }
 

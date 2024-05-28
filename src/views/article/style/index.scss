@@ -17,10 +17,17 @@
       color:#000;
       &-page {
         width: 60%; 
-        min-height: 100vh;
         line-height: 35px;
         word-break: break-word;
         font-size: 18px;
+      }
+      &-update {
+        width: 60%;
+        height: 35px;
+        text-align: left;
+        line-height: 35px;
+        margin-bottom: 20px;
+        color: rgb(169, 169, 169);
       }
       &-bottom {
         width: 60%; 
