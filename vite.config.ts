@@ -48,7 +48,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     server: {
       host: '0.0.0.0',//指定服务器应该监听哪个 IP 地址
-      port: 3000,//指定服务器端口号
+      port: 24000,//指定服务器端口号
       strictPort: true,//端口被占用直接退出
       https: false,//启用 TLS + HTTP/2
       open: false,//在开发服务器启动时自动在浏览器中打开应用程序
@@ -59,11 +59,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           changeOrigin: true,
            rewrite: path => path.replace(new RegExp("^" + env.VITE_APP_BASE_API), "")
         },
-           // '/api': {
-           //   target: 'http://192.168.0.144:7010',
-           //   changeOrigin: true,//是否跨域
-           //   rewrite: (path) => path.replace(/^\/api/, ''),
-           // },
+          //  '/xblog-api': {
+          //    target: 'http://127.0.0.1:20000',
+          //    changeOrigin: true,//是否跨域
+          //    rewrite: (path) => path.replace(/^\/xblog-api/, ''),
+          //  },
       }
     },
     build: {

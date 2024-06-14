@@ -6,25 +6,38 @@
         <!-- 登录 -->
         <div class="signin"  :class="{nodisplay:titleKey=='signin'}" >
           <h1>登录</h1>
-          <form class="more-padding" autocomplete="off">
-            <input type="text" placeholder="用户名">
-            <input type="password" placeholder="密码">
-            <div class="checkbox">
+          <el-form class="more-padding" :model="Loginform">
+            <el-form-item >
+              <el-input type="text" placeholder="用户名" v-model="Loginform.username" />
+            </el-form-item>
+            <el-form-item >
+              <el-input type="password" v-model="Loginform.password" placeholder="密码" />
+            </el-form-item>
+            <!-- <div class="checkbox">
               <input type="checkbox" id="remember" /><label for="remember">记住密码</label>
-            </div>
-            <button class="buttom sumbit">登录</button>
-          </form>
+            </div> -->
+            <button type="button" class="buttom sumbit" @click="toLogin">登录</button>
+          </el-form>
+          
         </div>
         <!-- 注册 -->
         <div class="signup " :class="{nodisplay:titleKey=='signup'}">
           <h1>注册</h1>
-          <form  class="more-padding" autocomplete="off">
-            <input type="text" placeholder="用户名">
-            <input type="email" placeholder="邮箱">
-            <input type="password" placeholder="密码">
-            <input type="password" placeholder="确认密码">
-            <button class="button submit">创建账户</button>
-          </form>
+          <el-form class="more-padding" :model="registerForm">
+            <el-form-item >
+              <el-input type="text" placeholder="用户名" v-model="registerForm.username" />
+            </el-form-item>
+            <el-form-item >
+              <el-input type="email" placeholder="邮箱" v-model="registerForm.email" />
+            </el-form-item>
+            <el-form-item >
+              <el-input type="password" placeholder="密码" v-model="registerForm.password" />
+            </el-form-item>
+            <el-form-item >
+              <el-input type="password" v-model="registerForm.checkPassword" placeholder="确认密码" />
+            </el-form-item>
+            <button type="button" class="buttom sumbit" @click="toRegister()">创建账户</button>
+          </el-form>
         </div>
 
         
@@ -50,23 +63,71 @@
 </template>
 
 <script setup lang="ts">
+import {Login,Register} from '@/api/login'
+import type { LoginType } from'@/common/ts/commonInterface'
+import {getEncrypt} from '@/common/bcryptjs/bcryptjs'
+import {getPublicKey} from '@/api/login'
+import { userStore } from '../../store/userStore'
+
+const Loginform = reactive<{username:string,password:string}>({
+  username:'',
+  password:''
+})
+const registerForm = reactive<LoginType>({
+  username:'',
+  password:'',
+  checkPassword:'',
+  email:''
+})
+
+const  toRegister = () =>{
+  Register(registerForm).then(res=>{
+    console.log(res)
+  })
+}
+
+const toLogin = ()=>{
+  getPublicKey().then((res:any)=>{
+    if(!getEncrypt(res.data,Loginform.password) as boolean) {
+      console.log('登录失败')
+      return
+    }
+    Loginform.password = getEncrypt(res.data,Loginform.password) as string
+    Login(Loginform).then((result:any)=>{
+      console.log(result)
+      const {token  ,userInfo} = result.data
+      userStore().updateToken(token)
+      userStore().updateUserInfo(userInfo)
+      
+    })
+  })
+  
+}
+
+
+
+
 const titleKey =ref<string>('signup')
 
 let pinkboxX = ref<string|number>(0)
 const clickSignUp = ()=>{
   pinkboxX.value = 80
+  Loginform.password = ''
+  Loginform.username = ''
   setTimeout(()=>{
     titleKey.value = 'signin'
   },600)
 }
 const clickLogin = ()=>{
+  registerForm.password = ''
+  registerForm.username = ''
+  registerForm.checkPassword = ''
+  registerForm.email = ''
   pinkboxX.value = 0
   setTimeout(()=>{
     titleKey.value = 'signup'
   },600)
 }
-
-
 
 </script>
 <style lang="scss" scoped>

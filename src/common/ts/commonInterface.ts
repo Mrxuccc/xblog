@@ -5,28 +5,53 @@ export interface SetBoxImageValue {
   tag:'img'|'video'|'article', //图片img,视频video
   info:String,
   tagTextList:string[],
-  date:string|Date
+  createDate:string|Date,
+  updateDate?:string|Date
 }
 
 export interface setShareInfoType {
   id:string|number,
-  userName:string,
-  releaseTime:string|Date,
+  username:string,
+  userid:string|number,
+  createTime:string|Date,
   info:string,
   avatarImg:string,
-  showImg:[string],
-  commentNumber:number|string,
+  showImg:[],
+  commentNumber?:number|string,
 
 }
 
 export type setCommentType = {
   id:string|number,
-  userName:string,
-  releaseTime:string|Date,
+  username:string,
+  createTime:string|Date,
+  updateTime?:string|Date,
   comment:string,
-  avatarImg:string,
-  showImg?:string|null|undefined,
+  avatarImg?:string|Object,
+  showImg?:string|null|undefined|[],
   to?:string|null|undefined,
+  toUserid?:string|null|undefined
 
+
+}
+
+export type LoginType = {
+  userid?:string|number,
+  username:string,
+  password:string,
+  email?:string,
+  checkPassword?:string,
+}
+
+
+export type userType = {
+  userid:string|number,
+  username:string,
+  role:string,
+  password:string
+  email:string
+  avatarImg?:string|Object
+  createTime?:Date,
+  updateTime?:Date
 
 }

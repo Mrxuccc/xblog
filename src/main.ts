@@ -10,10 +10,11 @@ import './style.css'
 import '@/assets/iconfonts/iconfont.css'
 import '@/assets/iconfonts/iconfont.js'
 
+const store = createPinia()
 const app = createApp(App)
 
-app.use(router)
 app.use(Antd)
-app.use(createPinia)
 app.use(ElementPlus)
+app.use(store)
+app.use(router)
 app.mount('#app')

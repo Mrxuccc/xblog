@@ -49,7 +49,7 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
 const router = useRoute()
-import type {setCommentType} from '@/common/ts/commonInterface.ts'
+import type {setCommentType} from '@/common/ts/commonInterface'
 //模拟数据
 let pageValueList = ref<{title:any,id:any}>({title:'',id:''})
 const pageArticle = ref<string>(
@@ -88,23 +88,23 @@ const subMitComment =()=>{
 let commentList = ref<setCommentType[]>([
   {
     id:'12320',
-    userName:'shark-1',
-    releaseTime:'2024-5-25 12:15:40',
+    username:'shark-1',
+    createTime:'2024-5-25 12:15:40',
     comment:'我来评论啦！！！',
     avatarImg:'../../assets/image/netTextImg/arvator.jpg',
   },
   {
     id:'12322',
-    userName:'shark-2',
-    releaseTime:'2024-5-25 12:15:40',
+    username:'shark-2',
+    createTime:'2024-5-25 12:15:40',
     to:'shark',
     comment:'我来评论啦！！！',
     avatarImg:'../../assets/image/netTextImg/arvator.jpg',
   },
   {
     id:'12321',
-    userName:'shark-3',
-    releaseTime:'2024-5-25 12:15:40',
+    username:'shark-3',
+    createTime:'2024-5-25 12:15:40',
     comment:'我来评论啦---！！！',
     avatarImg:'../../assets/image/netTextImg/arvator.jpg',
   }

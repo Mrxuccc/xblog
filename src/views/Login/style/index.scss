@@ -192,6 +192,49 @@
     font-size: 1.0em;
     transition: 0.8s all ease;
   }
+  :deep(.el-input__wrapper.is-focus) {
+    box-shadow: none;
+    border: none;
+  }
+  :deep(.el-input__wrapper) {
+    background: #eac7cc;
+    border: none;
+    border-bottom: 1px solid rgba(246, 246, 246, 0.5);
+    box-shadow: none;
+    border-radius: 0;
+    input {
+      background: #eac7cc;
+      color: #ce7d88;
+      border: none;
+      padding: 9px;
+      font-weight: 100;
+    }
+    
+    input::placeholder {
+      color: #f6f6f6;
+      letter-spacing: 2px;
+      font-size: 1.0em;
+      font-weight: 100;
+    }
+    
+    input:focus {
+      color: #ce7d88;
+      outline: none;
+      font-size: 1.0em;
+    }
+    &:focus {
+      border: none;
+      border-bottom: 1.2px solid rgba(206, 125, 136, 0.7);
+      transition: 0.8s all ease;
+      box-shadow: none;
+    }
+    &:hover {
+      border:none;
+    }
+  }
+  :deep(.el-input) {
+    --el-input-hover-border-color:none;
+  }
   
   input:focus::placeholder {
     opacity: 0;

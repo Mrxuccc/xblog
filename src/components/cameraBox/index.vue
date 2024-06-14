@@ -10,7 +10,7 @@
           {{ item.text }}
         </div>
         <div class="cameraBoxs-date">
-          {{ item.date }}
+          {{ item.createDate }}
         </div>
     </div>
 </template>
@@ -32,7 +32,7 @@ const props = withDefaults(
                 tag:'img',
                 info:'',
                 tagTextList:['SHARK'],
-                date:'2024-05-14 12:34:12'
+                createDate:'2024-05-14 12:34:12'
             },
         ]
     }

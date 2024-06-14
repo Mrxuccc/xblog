@@ -9,7 +9,7 @@
           />
         </div>
         <div v-if="index%2==0" class="pageBoxs-text pageBoxs-textType1"  @click="toArticlePage(item)">
-          <div class="pageBoxs-text-time">发布于{{ item.date }}</div>
+          <div class="pageBoxs-text-time">发布于{{ item.createDate }}</div>
           <h3 class="pageBoxs-text-head">{{ item.text }}</h3>
           <div class="pageBoxs-text-article">
             {{ item.info }}
@@ -60,7 +60,7 @@ const props = withDefaults(
                 tag:'img',
                 info:'',
                 tagTextList:['SHARK'],
-                date:'2024-05-14 12:34:12'
+                createDate:'2024-05-14 12:34:12'
             },
         ]
     }

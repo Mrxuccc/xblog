@@ -1,7 +1,7 @@
-import { message } from 'ant-design-vue';
+// import { message } from 'ant-design-vue';
 import axios from 'axios';
 // import modelTool from '@/util/modelTool';//自己封装的方法函数
-import router from '@/router';
+// import router from '@/router';
 // import { errorCodeType } from '../errorCodeType';//不同状态码，返回不同的值
 
 // 创建axios实例

@@ -3,23 +3,23 @@
         <div class="shareBox-head">
           <img :src="getImageUrl(item.avatarImg)"  class="shareBox-head-img"/>
           <div  class="shareBox-head-name">
-            {{ item.userName }}
+            {{ item.username }}
           </div>
         </div>
         <div class="shareBox-content">
             <div class="shareBox-content-text">{{ item.info }}</div>
             <a-image
                 width="40%"
-                :src="getImageUrl(items)"
+                :src="items['img']"
                 v-for="(items,key) in item.showImg" :key="key"
             />
         </div>
         <div class="shareBox-bottom">
           <div class="shareBox-bottom-box">
             <div class="shareBox-bottom-box-time">
-              {{item.releaseTime}}
+              {{item.createTime}}
             </div>
-            <div class="shareBox-bottom-box-comment" @click="toComment(index)">
+            <div class="shareBox-bottom-box-comment" @click="toComment(index,item.id)">
               <div class="shareBox-bottom-box-comment-number">
                 {{ item.commentNumber }}
               </div>
@@ -42,7 +42,7 @@
                 <i class="xblog-EmojiAdd xfont"></i>
                 <i class="xblog-tupian xfont"></i>
               </div>
-              <div class="shareBox-bottom-commentBox-fn-submit" @click="subMitComment(item.id,item.userName)">
+              <div class="shareBox-bottom-commentBox-fn-submit" @click="subMitComment(item.id,item.username)">
                 提交
               </div>
             </div>
@@ -61,8 +61,8 @@
 </template>
 
 <script lang="ts" setup>
-import { getImageUrl } from '@/common/ts/common.ts'
-import type {setShareInfoType,setCommentType} from '@/common/ts/commonInterface.ts'
+import { getImageUrl } from '@/common/ts/common'
+import type {setShareInfoType,setCommentType} from '@/common/ts/commonInterface'
 let openCommentIndex = ref<number>(-1) 
 const props = withDefaults(
     defineProps<{
@@ -72,8 +72,8 @@ const props = withDefaults(
         valueList:()=>[
             {
                 id:'',
-                userName:'',
-                releaseTime:'',
+                username:'',
+                createTime:'',
                 info:'',
                 avatarImg:'',
                 showImg:[''],
@@ -85,27 +85,32 @@ const props = withDefaults(
 )
 props
 
+
 //定义组件传值
-const emit = defineEmits(['toReplys','subMitComment'])
+const emit = defineEmits(['toReplys','subMitComment','toComment'])
 
 //评论点击事件
-const toComment=(index:number) =>{
+const toComment=(index:number,shareid:number|string) =>{
   cleanInput()
   openCommentIndex.value = (openCommentIndex.value == index)? -1:index
+  if(openCommentIndex.value !== -1) {
+    emit('toComment',shareid)
+  }
 }
 //输入文本
 let commentValue = ref<string>('')
 //提交
-const subMitComment = (id:string|number,userName:string)=>{
-  emit('subMitComment',id,userName,commentValue.value)
+const subMitComment = (id:string|number)=>{
+  emit('subMitComment',id,commentValue.value)
+  cleanInput()
 }
 //文本清空
 const cleanInput=()=>{
   commentValue.value = ''
 }
 //评论回复
-const toReply=(id:string|number,userName:string)=>{
-  emit('toReplys',id,userName)
+const toReply=(id:string|number,username:string)=>{
+  emit('toReplys',id,username)
 }
 </script>
 

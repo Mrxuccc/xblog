@@ -13,7 +13,7 @@ let footerShow = ref<boolean>(true)
 
 watch(
   ()=> router.path,
-  (newVal)=>{
+  (newVal:any)=>{
     if(newVal=='/Login'){
       footerShow.value = false
     }else {

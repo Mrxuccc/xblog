@@ -6,30 +6,31 @@
           <img
             width="100%"
             height="100%"
-            :src="item.img?getImageUrl(item.img):''"
+            :src="item.img"
           />
+          // item.img?getImageUrl(item.img):''
         </div>
         <div v-if="index%2==0" class="pageBoxs-text pageBoxs-textType1"  @click="toArticlePage(item)">
-          <div class="pageBoxs-text-time">发布于{{ item.date }}</div>
+          <div class="pageBoxs-text-time">发布于{{ item.createDate }}</div>
           <h3 class="pageBoxs-text-head">{{ item.text }}</h3>
           <div class="pageBoxs-text-article">
             {{ item.info }}
           </div>
           <div class="pageBoxs-text-tag">
             <div v-for="tagIndex in item.tagTextList" :key="tagIndex" class="pageBoxs-text-tag-item">
-              {{ tagIndex }}
+              {{ tagIndex['tag'] }}
             </div>
           </div>
         </div>
         <div v-if="index%2==1" class="pageBoxs-text pageBoxs-textType2"  @click="toArticlePage(item)">
-          <div class="pageBoxs-text-time">发布于 2024-05-14 12:34:12</div>
+          <div class="pageBoxs-text-time">发布于 {{ item.createDate }}</div>
           <h3 class="pageBoxs-text-head">{{ item.text }}</h3>
           <div class="pageBoxs-text-article">
             {{ item.info }}
           </div>
           <div class="pageBoxs-text-tag">
             <div v-for="tagIndex in item.tagTextList" :key="tagIndex" class="pageBoxs-text-tag-item">
-              {{ tagIndex }}
+              {{ tagIndex['tag'] }}
             </div>
           </div>
         </div>
@@ -62,7 +63,7 @@ const props = withDefaults(
                 tag:'img',
                 info:'',
                 tagTextList:['SHARK'],
-                date:'2024-05-14 12:34:12'
+                createDate:'2024-05-14 12:34:12'
             },
         ]
     }
