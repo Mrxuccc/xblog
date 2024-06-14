@@ -1,6 +1,6 @@
 import { defineStore } from "pinia"
 import type {userType} from '@/common/ts/commonInterface'
-export const userStore = defineStore("user", {
+export const userStore = defineStore("userStore", {
     state: () => {
         return {
             token:'',
@@ -26,6 +26,7 @@ export const userStore = defineStore("user", {
         //更新基础数据类型
         updateToken(token: string) {
           this.token = token;
-        },
-    }
+        }
+    },
+    persist: true
 })

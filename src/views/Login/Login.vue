@@ -80,7 +80,7 @@ const registerForm = reactive<LoginType>({
   email:''
 })
 
-const  toRegister = () =>{
+const toRegister = () =>{
   Register(registerForm).then(res=>{
     console.log(res)
   })
@@ -98,7 +98,7 @@ const toLogin = ()=>{
       const {token  ,userInfo} = result.data
       userStore().updateToken(token)
       userStore().updateUserInfo(userInfo)
-      
+      console.log()
     })
   })
   
