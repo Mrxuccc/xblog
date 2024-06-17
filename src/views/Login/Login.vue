@@ -67,7 +67,9 @@ import {Login,Register} from '@/api/login'
 import type { LoginType } from'@/common/ts/commonInterface'
 import {getEncrypt} from '@/common/bcryptjs/bcryptjs'
 import {getPublicKey} from '@/api/login'
-import { userStore } from '../../store/userStore'
+import { userStore } from '@/store/userStore'
+import { useRouter } from 'vue-router';
+const router = useRouter()
 
 const Loginform = reactive<{username:string,password:string}>({
   username:'',
@@ -94,11 +96,20 @@ const toLogin = ()=>{
     }
     Loginform.password = getEncrypt(res.data,Loginform.password) as string
     Login(Loginform).then((result:any)=>{
-      console.log(result)
-      const {token  ,userInfo} = result.data
-      userStore().updateToken(token)
-      userStore().updateUserInfo(userInfo)
-      console.log()
+      if(result.code == 200) {
+        //本地存储
+        const {token  ,userInfo} = result.data
+        userStore().updateToken(token)
+        userStore().updateUserInfo(userInfo)
+        
+        //页面跳转到首页
+        router.push({
+          path:"/"
+        })
+      }
+    }).catch((err:any)=>{
+      //失败提示(未做)
+      console.log(err)
     })
   })
   

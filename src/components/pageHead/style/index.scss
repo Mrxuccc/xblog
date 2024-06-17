@@ -27,10 +27,45 @@
       color: $headText-Color;
     }
     &-avatar {
-      margin: 0 8px;    
-      margin-top: 50%;
-      transform: translateY(-32%);
+      margin: 0 10px;
+      margin-top: 0%;
       cursor: pointer;
+      &-lan {
+        width: 100%;
+      }
+      &-LoginOut {
+        width: 100%;
+        color: #000;
+        font-size: 16px;
+        text-align: center;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover {
+          color: $--linkHoverColor !important;
+          &::before {
+            width: 100%;
+            transition: 0.2s all linear;/*设置过度时间*/
+            transition-delay: 0.1s;/*过度延时*/
+          }
+        }
+      }
+      &-button {
+        width: 100%;
+        border-bottom: 5px solid transparent;
+        position: relative;
+        color: #000;
+        font-size: 16px;
+        text-align: center;
+        transition: 0.5s;
+        &:hover {
+          color: $--linkHoverColor !important;
+          &::before {
+            width: 100%;
+            transition: 0.2s all linear;/*设置过度时间*/
+            transition-delay: 0.1s;/*过度延时*/
+          }
+        }
+      }
     }
     &-button {
       height: 42px;
@@ -104,4 +139,10 @@
   .head-slide-fade-leave-to {
     transform: translateY(20px);
     opacity: 0;
+  }
+
+
+  ::v-deep .el-popover.el-popper{
+    max-width: 100px !important;
+    padding: 0 !important;
   }

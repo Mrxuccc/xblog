@@ -16,17 +16,22 @@ export const userStore = defineStore("userStore", {
             if(user){
                 this.userInfo = user;
             }else {
-                this.userInfo = {}
+                this.userInfo = {} as userType
             }
         },
         //更新整个对象
         updateUserInfo(userInfo:userType | null) {
-            this.userInfo = userInfo ? userInfo:{} 
+            this.userInfo = userInfo ? userInfo:{} as userType ;
         },
         //更新基础数据类型
         updateToken(token: string) {
           this.token = token;
+        },
+        cleanUserStore(){
+            this.token = '',
+            this.userInfo = {} as userType ;
         }
     },
+    //数据持久化 存储 localStorage
     persist: true
 })

@@ -50,7 +50,7 @@ export type userType = {
   role:string,
   password:string
   email:string
-  avatarImg?:string|Object
+  avatarImg?:string
   createTime?:Date,
   updateTime?:Date
 

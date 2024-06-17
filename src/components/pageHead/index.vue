@@ -14,19 +14,28 @@
           </router-link>
         </template>
         <!-- 用户头像，用户登录，退出登录 -->
-        <Router-Link to="/Login">
-          <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" >
-          </el-avatar>
-        </Router-Link>
+        <el-popover  placement="bottom" :width="100">
+            <template #reference>
+              <el-avatar class="headerBar-avatar" :size="25" :src="state.circleUrl" />
+            </template>
+            <Router-Link v-if="!ifLogin" class="headerBar-avatar-lan" to="/Login">
+              <div class="headerBar-avatar-button">
+                登录
+              </div>
+            </Router-Link>
+            <div v-else class="headerBar-avatar-LoginOut" @click="LoginOut" >注销</div>
+          </el-popover>
     </div>
   </Transition>
 </template>
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
+import { userStore } from '@/store/userStore'
+import type {userType} from '@/common/ts/commonInterface'
 const router = useRouter()
 
 const routerList =ref(router.getRoutes())
-
+let ifLogin = ref<boolean>(false)
 let isShow = ref<boolean>(true)
 let headCondition = ref<number>(0)
 let directionKeyValue = ref<number>(0)
@@ -51,6 +60,23 @@ const handleScroll = ()=> {
     }
   }
 }
+const LoginOut =()=>{
+  userStore().cleanUserStore()
+}
+//登录操作
+watch(()=>
+  userStore().userInfo as userType,
+  (newVal:userType)=>{
+    console.log(newVal)
+    const {avatarImg,userid} = newVal
+    state.circleUrl = avatarImg? avatarImg:'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+    ifLogin.value = userid?true:false
+  },
+  { 
+    deep:true,
+    immediate:true
+  }
+)
 
 onMounted(()=>{
     window.addEventListener('scroll', handleScroll)
