@@ -27,9 +27,11 @@ export const userStore = defineStore("userStore", {
         updateToken(token: string) {
           this.token = token;
         },
+        //清楚数据
         cleanUserStore(){
-            this.token = '',
-            this.userInfo = {} as userType ;
+            this.$reset()
+            // this.token = '',
+            // this.userInfo = {} as userType ;
         }
     },
     //数据持久化 存储 localStorage
