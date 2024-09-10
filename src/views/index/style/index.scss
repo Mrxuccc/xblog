@@ -1,156 +1,154 @@
 .indexPage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  &-showPane {
+    width: 100%;
+    height: $IndexShowPane-height;
+    background: url("@/assets/image/background/seaBack.jpg") center/cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 2vh;
+    overflow: hidden;
+    // background: url('@/assets/image/background/background.jfif') center/cover;
+    // animation: hue 10s infinite alternate;
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 100%;
+    //   background: inherit;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   z-index: -1;
+    //   filter: blur(1rem);
+    //   transform: scale(1.15);
+    // }
+    &-SHOWICON {
+      width: 500px;
+      height: 93px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 50%;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      line-height: 93px;
+      font-size: 68px;
+      color: #fff;
+    }
+  }
+  &-content {
     width: 100%;
     height: auto;
+    position: relative;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    &-showPane {
-      width: 100%;
-      height: $IndexShowPane-height;
-      background: url('@/assets/image/background/seaBack.jpg') center/cover;
-      background-attachment: fixed;
+    justify-content: center;
+    // &-aboutMe {
+    //   position: absolute;
+    //   top: 5px;
+    //   left: 40px;
+    //   text-align: center;
+    //   color: $iconBlue-color;
+    //   cursor: pointer;
+    //   & > i {
+    //     display: inline-block;
+    //     font-size: 42px;
+    //     transition: 0.5s;
+    //   }
+    //   .routeY {
+    //     transform: rotateY(180deg);
+    //   }
+    // }
+    .profile {
+      width: 18%;
+      height: 45vh;
+      margin-right: 2%;
+      border-radius: 8px;
+      background-color: $boxBg-white;
+      box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
+      transition: box-shadow 0.5s;
       overflow: hidden;
-      position: relative;
-      z-index: 0;
-      margin-bottom: 2vh;
-      overflow: hidden;
-      // background: url('@/assets/image/background/background.jfif') center/cover;
-      // animation: hue 10s infinite alternate;
-      // &::after {
-      //   content: "";
-      //   width: 100%;
-      //   height: 100%;
-      //   background: inherit;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   z-index: -1;
-      //   filter: blur(1rem);
-      //   transform: scale(1.15);
-      // }
-      &-SHOWICON {
-        width: 500px;
-        height: 93px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        right: 50%;
-        bottom: 50%;
-        transform: translate(-50%,-50%);
-        text-align: center;
-        line-height: 93px;
-        font-size: 68px;
-        color: #fff;
+      &:hover {
+        box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.8);
       }
-      
-    }
-    &-content {
-      width: 100%;
-      height: auto;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      &-aboutMe {
-        position: absolute;
-        top: 5px;
-        left: 40px;
-        text-align: center;
-        color: $iconBlue-color;
-        cursor: pointer;
-        &> i {
-          display: inline-block;
-          font-size: 20px;
-          transition: .5s;
+      &-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      &-avatar {
+        margin: 8% 0% 0%;
+      }
+      &-name {
+        font-size: 30px;
+        font-weight: 700;
+        color: $textColor-black;
+        margin: 5% 0;
+      }
+      &-link {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 8%;
+        & > div {
+          cursor: pointer;
         }
-        .routeY {
-          transform: rotateY(180deg);
+        .xfont {
+          color: #000;
+          font-size: 2.7rem;
+        }
+        .xfontSvg {
+          font-size: 3rem;
         }
       }
-      .profile {
-        width: 18%;
-        height: 45vh;
-        margin-right: 2%;
-        border-radius: 8px;
-        background-color: $boxBg-white;
-        box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.5);
-        transition:box-shadow 0.5s;
-        overflow: hidden;
-        &:hover {
-            box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.8);  
-        }
-        &-content {
-          width: 100%;
+      &-valuePanes {
+        width: 100%;
+        height: 25%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2% 8%;
+        &-box {
+          width: 33%;
           height: 100%;
+          color: $--boxTitleTextColor;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-        }
-        &-avatar {
-          margin: 8% 0% 0%;
-        }
-        &-name {    
-          font-size: 30px;
-          font-weight: 700;
-          color: $textColor-black;
-          margin: 5% 0;
-        }
-        &-link {
-          width: 100%;
-          display: flex;
           justify-content: space-around;
           align-items: center;
-          padding: 0 8%;
-          &>div {
-            cursor: pointer;
-          }
-          .xfont {
-            color:#000;
-            font-size: 2.7rem;
-          }
-          .xfontSvg {
-            font-size: 3rem;
-          }
         }
-        &-valuePanes {
-          width: 100%;
-          height: 25%;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          padding: 2% 8%;
-          &-box {
-            width: 33%;
-            height: 100%;
-            color: $--boxTitleTextColor;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-          }
+      }
+    }
+    &-boxList {
+      width: 70%; //75% open // 60% closed
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      transition: width 0.5s;
+    }
+    .closeedProfile {
+      width: 55%;
+      transition: all 0.5s;
+    }
+  }
+}
 
-        }
-      }
-      &-boxList {
-        width: 70%; //75% open // 60% closed
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        transition: width 0.5s;
-      }
-      .closeedProfile {
-        width: 55%;
-        transition: all 0.5s;
-      }
-    }
+@keyframes hue {
+  from {
+    filter: hue-rotate(0);
   }
-  
-  @keyframes hue {
-    from {
-      filter: hue-rotate(0);
-    }
-    to {
-      filter: hue-rotate(360deg);
-    }
+  to {
+    filter: hue-rotate(360deg);
   }
+}

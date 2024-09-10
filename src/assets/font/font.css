@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "MiSans-Heavy";
+  src: url("~@/assets/font/MiSans-Heavy.ttf"); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MiSans-Light";
+  src: url("~@/assets/font/MiSans-Light.ttf"); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MiSans-Bold";
+  src: url("~@/assets/font/MiSans-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}

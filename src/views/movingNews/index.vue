@@ -1,181 +1,72 @@
 <template>
-    <!-- 动态 -->
-    <div class="news">
-      <KeepAlive>
-        <HeadImageBox></HeadImageBox>
-      </KeepAlive>
-      <!-- 内容 -->
-      <div class="news-content">
-        <!-- infoBox -->
-        <div class="news-content-boxList" :class = "{closeedProfile: isShowAboutme}">
-          <PageBox :valueList="pageimgList"></PageBox>
-        </div>
+  <!-- 动态 -->
+  <div class="news">
+    <KeepAlive>
+      <HeadImageBox></HeadImageBox>
+    </KeepAlive>
+    <!-- 内容 -->
+    <div class="news-content">
+      <!-- infoBox -->
+      <div class="news-content-boxList" >
+        <PageBox :valueList="pageimgList"></PageBox>
       </div>
-      <!-- 翻页器 -->
-      <LigntButton v-if="!isNoneValue" @click="addInfoPage"></LigntButton>
-      <PageNoneBox v-else></PageNoneBox>
     </div>
-  </template>
-  
-  <script setup lang="ts">
-  import type {SetBoxImageValue} from '@/common/ts/commonInterface.ts'
-  let isNoneValue = ref<boolean>(false)
-  let pageimgList = ref<SetBoxImageValue[]>([
-    {
-      id:'1231',
-      text:'东京街头',
-      img:'../../../src/assets/image/Material/page1.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK','测试'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'落日风车田',
-      img:'../../../src/assets/image/Material/page2.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK','测试'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题3',
-      img:'../../../src/assets/image/Material/page3.jpg',
-      tag:'img',
-      info:`测试标题`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题4',
-      img:'../../../src/assets/image/Material/page4.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题5',
-      img:'../../../src/assets/image/Material/page5.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题6',
-      img:'../../../src/assets/image/Material/page6.jpg',
-      tag:'img',
-      info:`测试文章`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
+    <!-- 翻页器 -->
+    <LigntButton v-if="!isNoneValue" @click="addInfoPage"></LigntButton>
+    <PageNoneBox v-else></PageNoneBox>
+  </div>
+</template>
+
+<script setup lang="ts">
+import type {SetBoxImageValue} from '@/common/ts/commonInterface'
+import {getNewsList} from '@/api/index'
+let isNoneValue = ref<boolean>(false)
+let pageimgList = ref<SetBoxImageValue[]>([])
+//判断是否有下一页
+const nextPageOf=()=>{
+  const result = (pageNo.value + 1)*pageSize.value //当前个数
+    if(result >= totals.value){ 
+      isNoneValue.value = true
+    }else {
+      isNoneValue.value = false
     }
-  ])
-  const addInfoPage = ()=>{ //下一页
-    let fakeValueList:SetBoxImageValue[] = [{
-      id:'1231',
-    text:'东京街头',
-      img:'../../../src/assets/image/Material/page1.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK','测试'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'落日风车田',
-      img:'../../../src/assets/image/Material/page2.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK','测试'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题3',
-      img:'../../../src/assets/image/Material/page3.jpg',
-      tag:'img',
-      info:`测试标题`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题4',
-      img:'../../../src/assets/image/Material/page4.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题5',
-      img:'../../../src/assets/image/Material/page5.jpg',
-      tag:'img',
-      info:`
-              1. 教育部：严禁挤占课间10分钟、严禁教师漠视纵容欺凌。
-              2. 三部门：稳妥有序推进57座以上大客车及卧铺客车退出运输市场。
-              3. 新冠变异株KP.2多国蔓延，疾控局回应：目前在我国处于极低流行水平。
-              4. 中国科学家发现银河系巨大磁环，距银心从6000光年延伸到5万光年。
-              5. 上海明确：禁止携带电动自行车或其蓄电池进入电梯。`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
-    },
-    {
-      id:'1231',
-    text:'测试标题6',
-      img:'../../../src/assets/image/Material/page6.jpg',
-      tag:'img',
-      info:`测试文章`,
-      tagTextList:['SHARK'],
-    createDate:'2024-05-14 12:34:12'
-    }]
-    pageimgList.value= pageimgList.value.concat(fakeValueList)
-  }
-  let isShowAboutme = ref<boolean>(false) //查看关于我
-  </script>
-  <style lang="scss" scoped>
-  @import url('./style/index.scss');
-  </style>
+}
+
+// 获取 value 数据
+const pageSize = ref<number>(6)
+let pageNo = ref<number>(0)
+let totals = ref<number>(0)
+const getValue = ()=>{
+  getNewsList({
+    pageSize:pageSize.value,
+    pageNo:pageNo.value
+  }).then(res=>{
+    const {record,total} = res.data
+    totals.value = total
+    pageimgList.value = record
+    // 判断是否有下一页
+    nextPageOf()
+  })
+}
+//下一页
+const addInfoPage = ()=>{ 
+  pageNo.value += 1
+  getNewsList({
+    pageSize:pageSize.value,
+    pageNo:pageNo.value
+  }).then(res=>{
+    const record = res.data.record
+    pageimgList.value= pageimgList.value.concat(record)
+    // 判断是否有下一页
+    nextPageOf()
+    
+  })
+}
+onBeforeMount(() => {
+  getValue()
+})
+</script>
+<style lang="scss" scoped>
+@import url('./style/index.scss');
+</style>
   

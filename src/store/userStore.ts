@@ -1,10 +1,10 @@
 import { defineStore } from "pinia"
-import type {userType} from '@/common/ts/commonInterface'
+import type { userType } from '@/common/ts/commonInterface'
 export const userStore = defineStore("userStore", {
     state: () => {
         return {
-            token:'',
-            userInfo: {} 
+            token: '',
+            userInfo: {} as userType
         }
     },
     getters: {
@@ -12,23 +12,23 @@ export const userStore = defineStore("userStore", {
     },
     actions: {
         //可以存放普通函数，也可以存放异步函数
-        setUser(user: userType | null){
-            if(user){
+        setUser(user: userType | null) {
+            if (user) {
                 this.userInfo = user;
-            }else {
+            } else {
                 this.userInfo = {} as userType
             }
         },
         //更新整个对象
-        updateUserInfo(userInfo:userType | null) {
-            this.userInfo = userInfo ? userInfo:{} as userType ;
+        updateUserInfo(userInfo: userType | null) {
+            this.userInfo = userInfo ? userInfo : {} as userType;
         },
         //更新基础数据类型
         updateToken(token: string) {
-          this.token = token;
+            this.token = token;
         },
         //清楚数据
-        cleanUserStore(){
+        cleanUserStore() {
             this.$reset()
             // this.token = '',
             // this.userInfo = {} as userType ;

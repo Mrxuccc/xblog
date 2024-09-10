@@ -8,12 +8,15 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BackTop: typeof import('./../components/backTop/index.vue')['default']
+    Box: typeof import('./../components/pageBox/box.vue')['default']
+    Boxes: typeof import('./../components/pageBox/boxes.vue')['default']
     CameraBox: typeof import('./../components/cameraBox/index.vue')['default']
     CommentBox: typeof import('./../components/commentBox/index.vue')['default']
     copy: typeof import('./../components/pageBox copy/index.vue')['default']
     DispersionGradient: typeof import('./../components/dispersionGradient/index.vue')['default']
     HeadImageBox: typeof import('./../components/headImageBox/index.vue')['default']
     LigntButton: typeof import('./../components/ligntButton/index.vue')['default']
+    MarkDownArticle: typeof import('./../components/markDownArticle/index.vue')['default']
     PageBox: typeof import('./../components/pageBox/index.vue')['default']
     'PageBox copy': typeof import('./../components/pageBox copy/index.vue')['default']
     PageFooter: typeof import('./../components/pageFooter/index.vue')['default']
@@ -22,6 +25,7 @@ declare module 'vue' {
     ReplySubmitDielog: typeof import('./../components/replySubmitDielog/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScaleImg: typeof import('./../components/scaleImg/index.vue')['default']
     SvgIcon: typeof import('./../components/SvgIcon/SvgIcon.vue')['default']
   }
 }
