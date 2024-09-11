@@ -1,14 +1,16 @@
 <template>
-  <div class="topImgBanner" :class="{
+  <div ref="ImgArticle" class="topImgBanner" :class="{
     'topImgBanner-articleHeight': tag != 'normal',
     'topImgBanner-radomBg': tag == 'normal',
   }">
+    <!-- 文章页 -->
     <div v-if="tag != 'article'" class="topImgBanner-title">
       <!-- 未完成 -->
       <slot name="titleCenter">
         爱才应该是刺中好人的唯一的剑，是恶人能佩上的唯一的花。
       </slot>
     </div>
+    <!-- 首页 -->
     <div v-else class="topImgBanner-articleTitle">
       <div class="topImgBanner-articleTitle-title">
         {{ title }}
@@ -22,7 +24,7 @@
 
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
-import { getBGImgLinkUrl } from "@/common/ts/common";
+import { getBGImgLinkUrl, addClasses } from "@/common/ts/common";
 import { headBackStore } from '@/store/headBackStore'
 const router = useRouter();
 //数据传入
@@ -56,14 +58,24 @@ let randomBackground = () => {
     headBackStore().headImgList[Math.floor(Math.random() * headBackStore().headImgList.length)]
   );
 };
+//获取元素
+const ImgArticle = ref<HTMLElement | null>(null)
+
+const addClass = () => {
+  addClasses(ImgArticle.value, ['animate__fadeInDown', 'animate__animated']);
+}
+onMounted(() => {
+  addClass();
+})
 watch(
   () => router.currentRoute.value.path,
   () => {
     if (props.tag == "normal") {
       randomBackground();
+      addClass();
     }
   },
-  { immediate: true, deep: true }
+  { immediate: true, deep: true },
 );
 </script>
 

@@ -11,6 +11,9 @@ import './style.css'
 import 'animate.css'
 import '@/assets/iconfonts/iconfont.css'
 import '@/assets/iconfonts/iconfont.js'
+
+//自定义钩子
+import { vVisibleOnce } from '@/common/ts/vVisbleOnce';
 //markDown
 import VueMarkdownEditor from '@kangc/v-md-editor';
 import '@kangc/v-md-editor/lib/style/base-editor.css';
@@ -33,12 +36,12 @@ VMdPreview.use(githubTheme, {
 VueMarkdownEditor.use(vuepressTheme, {
     Prism,
 });
-
 const store = createPinia()
 store.use(piniaPluginPersistedstate);
 const app = createApp(App)
 app.use(VMdPreview);
 app.use(VueMarkdownEditor);
+app.directive('visible-once', vVisibleOnce);
 app.use(Antd)
 app.use(ElementPlus)
 app.use(store)

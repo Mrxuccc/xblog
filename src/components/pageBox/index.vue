@@ -1,6 +1,5 @@
 <template>
-  <!-- 自定义展示box -->
-  <div :id="`pageBoxs-${index}`" class="pageBoxs" :class="{ lastBox: index === valueList.length - 1 }"
+  <div :id="`pageBoxs-${index}`" class="pageBoxs " :class="{ lastBox: index === valueList.length - 1 }"
     v-for="(item, index) in valueList" @click="toArticlePage(item)" :key="index">
     <boxes :lazy="true" :val="item" :index="index"></boxes>
   </div>
@@ -37,17 +36,6 @@ const toArticlePage = (e: SetBoxImageValue) => {
     query: { id: e.id },
   });
 };
-// //首屏懒加载
-// onMounted(() => {
-//   window.addEventListener('click', () => {
-//     console.log('click')
-//   })
-// })
-// onBeforeUpdate(() => {
-//   window.removeEventListener('click', () => {
-//     console.log('clear')
-//   })
-// })
 </script>
 
 <style lang="scss" scoped>

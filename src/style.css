@@ -44,3 +44,13 @@ div {
 ::-webkit-scrollbar-track {
   background-color: rgba(73, 177, 245, .2);
 }
+
+/* 公共样式 */
+.opacityBox {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.visble {
+  opacity: 1 !important;
+}

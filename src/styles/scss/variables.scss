@@ -1,25 +1,25 @@
 //定义全局变量
-$textColor-black:#000;
-$IndexShowPane-height:100vh;
-$showPane-height:55vh;
-$article-height:40vh;
-$--layout-padding:60px;
-$iconBlue-color:#49b1f5;
-$bg-color:#fff;
+$textColor-black: #000;
+$IndexShowPane-height: 100vh;
+$showPane-height: 45vh;
+$article-height: 40vh;
+$--layout-padding: 60px;
+$iconBlue-color: #49b1f5;
+$bg-color: #fff;
 $headText-Color: hsl(0, 0%, 100%); //#4195a7;
 $boxBg-Color: #ddd;
-$boxBg-white:#fff;
-$text-white:#fff;
+$boxBg-white: #fff;
+$text-white: #fff;
 $tagBg-Color: #eee;
-$btnBg-Color:#fff;
-$btnText-Color:#808080;
-$--linkHoverColor:orange;
-$--timeTextColor:#797979;
-$--tagTextColor:#797979;
-$--boxTitleTextColor:#000;
+$btnBg-Color: #fff;
+$btnText-Color: #808080;
+$--linkHoverColor: orange;
+$--timeTextColor: #797979;
+$--tagTextColor: #797979;
+$--boxTitleTextColor: #000;
 //logo
 .LOGOICON {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 // // 页面跳转链接
@@ -37,8 +37,8 @@ $--boxTitleTextColor:#000;
 
 //ant 图片展示 修改
 :deep(.ant-image) {
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
 :deep(.ant-image-mask) {
   display: none !important;
 }

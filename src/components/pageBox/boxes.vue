@@ -1,6 +1,7 @@
 <template>
   <!-- 自定义展示box -->
-  <div class="pageBoxsContent">
+  <div class="pageBoxsContent  animate__animated opacityBox"
+    :class="{ visble: isVisible, animate__fadeInUp: isVisible }" v-visible-once="handleVisibilityOnce">
     <div v-if="index % 2 == 0" class="pageBoxs-imgType1">
       <SvgIcon iconName="xblog-edit_icon_vedio" v-if="val.tag === 'video'" className="xfont"></SvgIcon>
       <img loading="lazy" width="100%" height="100%" :src="getBGImgLink(val.img)" />
@@ -66,6 +67,12 @@ const props = withDefaults(
 );
 props;
 
+const isVisible = ref(false);
+
+// 当元素第一次进入视界时更新状态
+const handleVisibilityOnce = () => {
+  isVisible.value = true;
+};
 </script>
 
 <style lang="scss" scoped>
